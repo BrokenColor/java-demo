@@ -55,6 +55,7 @@ public class InstanceDemo {
 			System.out.println("===========使用反序列化");
 			ObjectInputStream in = new ObjectInputStream(new FileInputStream("data.obj"));
 			PrintTest printTest5 = (PrintTest) in.readObject();
+			in.close();
 			printTest5.setName("printTest5");
 			System.out.println(printTest5+",hashcode:"+printTest5.hashCode());
 			printTest5.hello();

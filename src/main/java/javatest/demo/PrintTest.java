@@ -4,7 +4,7 @@ import java.io.Serializable;
 
 public class PrintTest implements Cloneable, Serializable {
 
-	public static final long serivalVersion = 1L;
+	private static final long serialVersionUID = 1L;
 
 	private String name;
 
