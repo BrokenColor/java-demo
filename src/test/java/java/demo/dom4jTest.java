@@ -1,17 +1,14 @@
-/**
- * 
- */
-package Demo.Test;
+package java.demo;
 
 import java.io.File;
 import java.net.MalformedURLException;
 import java.util.List;
+import java.util.OtherUtil;
 
 import org.dom4j.Document;
 import org.dom4j.DocumentException;
 import org.dom4j.Element;
 
-import Demo.Util.OtherUtil;
 
 
 /**

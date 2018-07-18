@@ -1,4 +1,4 @@
-package Demo.Test;
+package java.demo;
 
 import java.io.InputStream;
 import java.net.URL;
