@@ -6,12 +6,12 @@ import java.io.OutputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
 /**
- * 免登陆test
+ * httpclient-test
  * @author BONC-g
  * @date 2018年7月18日下午3:49:53
  * @tags
  */
-public class App {
+public class HttpClient {
 	
 	public static void readParse(String urlPath,String str) throws Exception {
 		
