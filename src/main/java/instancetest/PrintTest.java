@@ -1,4 +1,4 @@
-package javatest.demo;
+package instancetest;
 
 import java.io.Serializable;
 

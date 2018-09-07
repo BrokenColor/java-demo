@@ -1,6 +1,6 @@
 # java-demo
 
-## javatest包-（测试）
+## src\test\java\javatest包-（测试）
 >java测试demo
 >#### xml读写测试
 >dom4jTest.java
@@ -13,6 +13,9 @@
 >#### 单例数据库连接
 >ConnFacory.java
 
-## concurrenttest-包(线程并发)
+## src\main\java\instancetest包-（创建类的方式）
+>InstanceDemo
+
+## src\main\java\concurrenttest包- (线程并发测试)
 >### semaphoredemo-包（Semaphore实现限制线程并发数）
 >
