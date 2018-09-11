@@ -1,7 +1,7 @@
 package concurrenttest.semaphoredemo.runtest;
 
 import concurrenttest.semaphoredemo.pojo.ThreadA;
-import concurrenttest.semaphoredemo.serviceImp.SemaphoreService_4;
+import concurrenttest.semaphoredemo.serviceImp.Semaphore_QueueLength;
 
 /**
  *  getQueueLength() 取得等待许可线程个数
@@ -10,11 +10,11 @@ import concurrenttest.semaphoredemo.serviceImp.SemaphoreService_4;
  * @author bc
  * @data 2018年9月10日
  */
-public class RunTest_4 {
+public class RunTest_QueueLength {
 
     public static void main(String[] args) {
 
-        SemaphoreService_4 service = new SemaphoreService_4();
+        Semaphore_QueueLength service = new Semaphore_QueueLength();
 
         ThreadA a = new ThreadA(service);
         a.start();

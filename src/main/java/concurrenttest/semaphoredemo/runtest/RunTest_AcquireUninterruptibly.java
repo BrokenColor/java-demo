@@ -2,7 +2,7 @@ package concurrenttest.semaphoredemo.runtest;
 
 import concurrenttest.semaphoredemo.pojo.ThreadA;
 import concurrenttest.semaphoredemo.pojo.ThreadB;
-import concurrenttest.semaphoredemo.serviceImp.SemaphoreService_2;
+import concurrenttest.semaphoredemo.serviceImp.Semaphore_AcquireUninterruptibly;
 
 /**
  * 在等待许可的情况下不允许中断
@@ -10,11 +10,11 @@ import concurrenttest.semaphoredemo.serviceImp.SemaphoreService_2;
  * @author bc
  * @data 2018年9月10日
  */
-public class RunTest_2 {
+public class RunTest_AcquireUninterruptibly {
 
     public static void main(String[] args) throws InterruptedException{
 
-        SemaphoreService_2 service = new SemaphoreService_2();
+        Semaphore_AcquireUninterruptibly service = new Semaphore_AcquireUninterruptibly();
 
         ThreadA a = new ThreadA(service);
         a.setName("A");

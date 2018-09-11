@@ -2,8 +2,7 @@ package concurrenttest.semaphoredemo.runtest;
 
 import concurrenttest.semaphoredemo.pojo.ThreadA;
 import concurrenttest.semaphoredemo.pojo.ThreadB;
-import concurrenttest.semaphoredemo.pojo.ThreadC;
-import concurrenttest.semaphoredemo.serviceImp.SemaphoreService_6;
+import concurrenttest.semaphoredemo.serviceImp.Semaphore_tryAcquire;
 
 /**
  * tryAcquire() 尝试得获取x许可
@@ -11,11 +10,11 @@ import concurrenttest.semaphoredemo.serviceImp.SemaphoreService_6;
  * @author bc
  * @data 2018年9月10日
  */
-public class RunTest_6 {
+public class RunTest_tryAcquire {
 
     public static void main(String[] args) {
 
-        SemaphoreService_6 service = new SemaphoreService_6();
+        Semaphore_tryAcquire service = new Semaphore_tryAcquire();
 
         ThreadA a = new ThreadA(service);
         a.setName("A");

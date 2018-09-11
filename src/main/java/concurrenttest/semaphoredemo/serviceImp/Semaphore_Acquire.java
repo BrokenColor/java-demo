@@ -10,7 +10,7 @@ import java.util.concurrent.Semaphore;
  * @author bc
  * @data 2018年9月7日
  */
-public class SemaphoreService_1 implements SemaphoreService {
+public class Semaphore_Acquire implements SemaphoreService {
 
 	//类Semaphore的参数代表同一时间内，最多允许多少个线程执行
 	private Semaphore semaphore = new Semaphore(10);

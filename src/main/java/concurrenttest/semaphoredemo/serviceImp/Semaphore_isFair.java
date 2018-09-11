@@ -10,7 +10,7 @@ import java.util.concurrent.Semaphore;
  * @author bc
  * @data 2018年9月9日
  */
-public class SemaphoreService_5 implements SemaphoreService {
+public class Semaphore_isFair implements SemaphoreService {
 
     private boolean isFair = false;//fair 是否公平信号量
     //类Semaphore的参数代表同一时间内，最多允许多少个线程执行

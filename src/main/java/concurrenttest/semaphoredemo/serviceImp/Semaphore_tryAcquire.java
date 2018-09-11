@@ -11,7 +11,7 @@ import java.util.concurrent.TimeUnit;
  * @author bc
  * @data 2018年9月9日
  */
-public class SemaphoreService_6 implements SemaphoreService {
+public class Semaphore_tryAcquire implements SemaphoreService {
 
     //类Semaphore的参数代表同一时间内，最多允许多少个线程执行
 //    private Semaphore semaphore = new Semaphore(1);
