@@ -27,7 +27,7 @@ public class Semaphore_ListPool {
     public Semaphore_ListPool() {
     	super();
     	for (int i = 0; i < poolMaxSize; i++) {
-			System.out.println("东野圭吾："+(i+1));
+			list.add("东野圭吾："+(i+1));
 		}
     }
     
