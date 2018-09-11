@@ -18,7 +18,7 @@ public class ThreadC extends Thread {
 
 	@Override
 	public void run() {
-		// TODO Auto-generated method stub
+		System.out.println(this.getName()+"启动了");
 		service.testMethod();
 	}
 	

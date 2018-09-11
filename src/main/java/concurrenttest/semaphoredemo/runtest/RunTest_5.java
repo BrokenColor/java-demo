@@ -4,7 +4,7 @@ import concurrenttest.semaphoredemo.pojo.ThreadA;
 import concurrenttest.semaphoredemo.serviceImp.SemaphoreService_5;
 
 /**
- * 公平信号量得测试
+ * 公平信号量得测试（可能需要多运行几次才能看到）
  *
  * @author bc
  * @data 2018年9月10日
