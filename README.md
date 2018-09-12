@@ -4,7 +4,7 @@
 >InstanceDemo
 
 ## src\main\java\concurrenttest包- (线程并发测试)
->### semaphoredemo-包（Semaphore实现限制线程并发数）
+>### semaphoredemo-包（Semaphore实现限制线程并发数test）
 >
 
 ## src\test\java\javatest包-（其他测试）
