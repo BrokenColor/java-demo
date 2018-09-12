@@ -6,7 +6,7 @@ import java.util.concurrent.Semaphore;
 
 /**
  * Semaphore实现限制线程并发数
- * 没调用一次acquire()，就使用x个许可
+ * 每调用一次acquire()，就使用x个许可
  * @author bc
  * @data 2018年9月7日
  */

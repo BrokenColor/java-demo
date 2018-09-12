@@ -7,11 +7,13 @@ import java.util.concurrent.Exchanger;
 
 import concurrenttest.semaphoredemo.pojo.Thread_ExchangerA;
 import concurrenttest.semaphoredemo.pojo.Thread_ExchangerB;
+import concurrenttest.semaphoredemo.pojo.Thread_ExchangerC;
 
 
 /**
  * 线程 Exchanger test
  * exchange()具有阻塞的特点，如果没有其他线程，则一直阻塞等待
+ * 
  * @author bc
  * @data 2018年9月12日
  */
@@ -24,6 +26,8 @@ public class RunTest_Exchanger {
 		threadA.start();
 		Thread_ExchangerB threadB = new Thread_ExchangerB(exchanger);
 		threadB.start();
+//		Thread_ExchangerC threadC = new Thread_ExchangerC(exchanger);
+//		threadC.start();
 		
 		System.out.println("main end");
 	}
