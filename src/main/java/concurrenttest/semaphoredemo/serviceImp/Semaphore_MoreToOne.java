@@ -22,11 +22,11 @@ public class Semaphore_MoreToOne implements SemaphoreService {
             semaphore.acquire();
             System.out.println("Name:" + Thread.currentThread().getName() + "-准备");
             lock.lock();
-            System.out.println("begin: " + System.currentTimeMillis());
+            System.out.println(Thread.currentThread().getName() + " begin: " + System.currentTimeMillis());
             for (int i = 0; i < 5; i++) {
                 System.out.println(Thread.currentThread().getName()+"打印"+(i+1));
             }
-            System.out.println("end: " + System.currentTimeMillis());
+            System.out.println(Thread.currentThread().getName() + " end: " + System.currentTimeMillis());
             lock.unlock();
             semaphore.release();
             System.out.println("Name:" + Thread.currentThread().getName() + "-结束");
