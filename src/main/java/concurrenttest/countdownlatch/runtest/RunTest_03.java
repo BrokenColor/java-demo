@@ -11,7 +11,7 @@ import concurrenttest.countdownlatch.thread.Thread_03;
  */
 public class RunTest_03 {
 
-    public static void main(String[] arg0) throws InterruptedException {
+    public static void main(String[] args) throws InterruptedException {
 
         Service_03 service = new Service_03();
 
