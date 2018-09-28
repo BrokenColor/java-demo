@@ -1,6 +1,3 @@
-/**
- * 
- */
 package concurrenttest.semaphoredemo.runtest;
 
 import java.util.concurrent.Exchanger;

@@ -1,6 +1,3 @@
-/**
- * 
- */
 package concurrenttest.semaphoredemo.runtest;
 
 import concurrenttest.semaphoredemo.pojo.Thread_Consumer;
