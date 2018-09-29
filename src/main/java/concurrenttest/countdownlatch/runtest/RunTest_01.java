@@ -1,6 +1,3 @@
-/**
- * 
- */
 package concurrenttest.countdownlatch.runtest;
 
 import concurrenttest.countdownlatch.service.Service_01;

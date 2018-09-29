@@ -4,7 +4,6 @@ import java.util.concurrent.Exchanger;
 
 import concurrenttest.semaphoredemo.pojo.Thread_ExchangerA;
 import concurrenttest.semaphoredemo.pojo.Thread_ExchangerB;
-import concurrenttest.semaphoredemo.pojo.Thread_ExchangerC;
 
 
 /**
