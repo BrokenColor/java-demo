@@ -5,7 +5,8 @@
 
 ## src\main\java\concurrenttest包- (线程并发测试)
 >### semaphoredemo-包（Semaphore实现限制线程并发数test）
->
+>### countdownlatch-包（countdownlatch类test）
+>### cyclicbarrier-包（cyclicbarrier类test）
 
 ## src\test\java\javatest包-（其他测试）
 >java测试demo
