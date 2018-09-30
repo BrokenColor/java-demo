@@ -6,7 +6,7 @@ import java.util.Properties;
 
 /**
  *  单例数据库连接
- * @author BONC-g
+ * @author bc
  * @date 2018年7月18日下午4:28:23
  * @tags 
  */

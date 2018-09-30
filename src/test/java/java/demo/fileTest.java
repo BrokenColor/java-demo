@@ -4,9 +4,9 @@ import java.io.File;
 import java.io.IOException;
 
 /**
- * @author BONC-g
+ * @author bc
  * @date 2018年7月18日上午10:41:32
- * @tags 
+ * @tags
  */
 public class fileTest {
 	public static void main(String[] args) throws IOException {
@@ -36,6 +36,7 @@ public class fileTest {
 			}
 		}
 	}
+
 	// 判断文件夹是否存在
 	public static void judgeDieExists(File dir) {
 		if (dir.exists()) {
