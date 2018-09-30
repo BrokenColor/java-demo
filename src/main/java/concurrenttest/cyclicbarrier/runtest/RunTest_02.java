@@ -2,7 +2,6 @@ package concurrenttest.cyclicbarrier.runtest;
 
 import java.util.concurrent.CyclicBarrier;
 
-import concurrenttest.cyclicbarrier.thread.Thread_01;
 import concurrenttest.cyclicbarrier.thread.Thread_02;
 
 /**

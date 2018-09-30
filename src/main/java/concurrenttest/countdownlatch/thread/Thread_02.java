@@ -3,8 +3,6 @@
  */
 package concurrenttest.countdownlatch.thread;
 
-import concurrenttest.countdownlatch.service.Service_01;
-
 import java.util.concurrent.CountDownLatch;
 
 /**

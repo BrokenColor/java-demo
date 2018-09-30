@@ -1,7 +1,6 @@
 package concurrenttest.countdownlatch.service;
 
 import java.util.concurrent.CountDownLatch;
-import java.util.concurrent.TimeUnit;
 
 /**
  * 描述:

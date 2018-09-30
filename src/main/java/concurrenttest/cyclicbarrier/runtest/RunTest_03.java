@@ -23,6 +23,7 @@ public class RunTest_03 {
 			threads[i] = new Thread_01(cbRef);
 			threads[i].start();
 			Thread.sleep(2000);
+			//目前受阻于各方的数量 await()
 			System.out.println("目前正在等待障碍的各方的数量:"+cbRef.getNumberWaiting());
 		}
 
