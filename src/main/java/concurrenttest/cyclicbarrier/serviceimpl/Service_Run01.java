@@ -1,13 +1,15 @@
-package concurrenttest.cyclicbarrier.service;
+package concurrenttest.cyclicbarrier.serviceimpl;
 
 import java.util.concurrent.BrokenBarrierException;
 import java.util.concurrent.CyclicBarrier;
+
+import concurrenttest.cyclicbarrier.service.Service_Run;
 
 /**
  * @author bc
  * @data 2018年9月29日
  */
-public class Service_Run01 {
+public class Service_Run01 implements Service_Run{
 
 	private CyclicBarrier cbRef;
 

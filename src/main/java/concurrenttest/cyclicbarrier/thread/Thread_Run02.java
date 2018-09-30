@@ -1,6 +1,6 @@
 package concurrenttest.cyclicbarrier.thread;
 
-import concurrenttest.cyclicbarrier.service.Service_Run02;
+import concurrenttest.cyclicbarrier.serviceimpl.Service_Run02;
 
 /**
  * CyclicBarrier 类TEST 模拟赛跑
