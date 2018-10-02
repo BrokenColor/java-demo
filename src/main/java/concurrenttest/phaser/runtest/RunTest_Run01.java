@@ -20,8 +20,8 @@ public class RunTest_Run01 {
             @Override
             protected boolean onAdvance(int phase, int registeredParties) {
                 System.out.println("onAdvance()被调用");
-//                return true;
-                return false;
+                return true;
+//                return false;
             }
         };
         Service_Run01 service = new Service_Run01(phaser);
