@@ -1,5 +1,7 @@
 package concurrenttest.phaser.serviceImpl;
 
+import concurrenttest.phaser.service.PrintTools;
+
 import java.util.concurrent.Phaser;
 
 /**
@@ -8,10 +10,14 @@ import java.util.concurrent.Phaser;
  * @author bc
  * @create 2018-10-02 12:36
  */
-public class PrintTools {
-    public static Phaser phaser;
+public class PrintTools00 implements PrintTools {
+    public Phaser phaser;
 
-    public static void methodA() {
+    public PrintTools00(Phaser phaser) {
+        this.phaser = phaser;
+    }
+
+    public void methodA() {
         System.out.println(Thread.currentThread().getName() + " begin A1:" + System.currentTimeMillis());
         //到达这个移相器，等待其他人。
         phaser.arriveAndAwaitAdvance();
@@ -22,7 +28,7 @@ public class PrintTools {
         System.out.println(Thread.currentThread().getName() + " end A2:" + System.currentTimeMillis());
     }
 
-    public static void methodB() {
+    public void methodB() {
         try {
             System.out.println(Thread.currentThread().getName() + " begin B1:" + System.currentTimeMillis());
             Thread.sleep(5000);

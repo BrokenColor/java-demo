@@ -15,21 +15,21 @@ import java.util.concurrent.Phaser;
  * @author bc
  * @create 2018-10-02 12:28
  */
-public class RunTest01 {
+public class RunTest00 {
     public static void main(String[] args) {
         Phaser phaser = new Phaser(3);
-        //PrintTools01PrintTools测试arriveAndDeregister();方法
-        PrintTools01 printTools01  = new PrintTools01(phaser);
+        //PrintTools测试arriveAndAwaitAdvance();方法
+        PrintTools00 printTools00  = new PrintTools00(phaser);
 
-        ThreadA threadA = new ThreadA(printTools01);
+        ThreadA threadA = new ThreadA(printTools00);
         threadA.setName("A");
         threadA.start();
 
-        ThreadB threadB = new ThreadB(printTools01);
+        ThreadB threadB = new ThreadB(printTools00);
         threadB.setName("B");
         threadB.start();
 
-        ThreadC threadC = new ThreadC(printTools01);
+        ThreadC threadC = new ThreadC(printTools00);
         threadC.setName("C");
         threadC.start();
     }

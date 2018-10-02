@@ -1,6 +1,7 @@
 package concurrenttest.phaser.thread;
 
-import concurrenttest.phaser.serviceImpl.PrintTools;
+import concurrenttest.phaser.service.PrintTools;
+import concurrenttest.phaser.serviceImpl.PrintTools00;
 
 import java.util.concurrent.Phaser;
 
@@ -11,14 +12,15 @@ import java.util.concurrent.Phaser;
  * @create 2018-10-02 12:35
  */
 public class ThreadA extends Thread {
-    private Phaser phaser;
 
-    public ThreadA(Phaser phaser) {
-        this.phaser = phaser;
+    private PrintTools service;
+
+    public ThreadA(PrintTools service) {
+        this.service = service;
     }
 
     @Override
     public void run() {
-        PrintTools.methodA();
+        service.methodA();
     }
 }
