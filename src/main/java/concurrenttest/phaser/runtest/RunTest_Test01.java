@@ -2,6 +2,7 @@ package concurrenttest.phaser.runtest;
 
 import concurrenttest.phaser.thread.ThreadTest;
 import concurrenttest.phaser.thread.ThreadTest01;
+import concurrenttest.phaser.thread.ThreadTestA;
 
 import java.util.concurrent.Phaser;
 
@@ -16,11 +17,11 @@ public class RunTest_Test01 {
     public static void main(String[] args) {
         Phaser phaser = new Phaser(3);
 
-        ThreadTest a = new ThreadTest(phaser);
+        ThreadTestA a = new ThreadTestA(phaser);
         a.setName("A");
         a.start();
 
-        ThreadTest b = new ThreadTest(phaser);
+        ThreadTestA b = new ThreadTestA(phaser);
         b.setName("B");
         b.start();
 
@@ -28,7 +29,7 @@ public class RunTest_Test01 {
         c.setName("C");
         c.start();
 
-        ThreadTest d = new ThreadTest(phaser);
+        ThreadTestA d = new ThreadTestA(phaser);
         d.setName("D");
         d.start();
 
