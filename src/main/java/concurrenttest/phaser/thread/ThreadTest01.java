@@ -18,14 +18,14 @@ public class ThreadTest01 extends Thread {
 
     @Override
     public void run() {
-        try {
-            System.out.println(Thread.currentThread().getName() + " begin");
-            Thread.sleep(5000);
+//        try {
+            System.out.println(Thread.currentThread().getName() + " begin phaser value=" + phaser.getPhase());
+//            Thread.sleep(5000);
             //等待该相位器的相位从给定相位值前进，如果当前相位不等于给定相位值，则立即返回，或者该相位器被终止。
             phaser.awaitAdvance(0);
             System.out.println(Thread.currentThread().getName() + " end phaser value=" + phaser.getPhase());
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+//        } catch (InterruptedException e) {
+//            e.printStackTrace();
+//        }
     }
 }
