@@ -19,6 +19,7 @@ public class ThreadTestA extends Thread {
     @Override
     public void run() {
             System.out.println(Thread.currentThread().getName() + " begin");
+            //传入的phase值和当前的相位值相同则在屏障出等待，否则继续
             phaser.arriveAndAwaitAdvance();
             System.out.println(Thread.currentThread().getName() + " end phaser value=" + phaser.getPhase());
     }
