@@ -1,7 +1,5 @@
 package concurrenttest.phaser.serviceImpl;
 
-import concurrenttest.phaser.service.PrintTools;
-
 import java.util.concurrent.Phaser;
 
 /**

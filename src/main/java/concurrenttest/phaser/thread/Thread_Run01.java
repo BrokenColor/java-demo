@@ -1,9 +1,6 @@
 package concurrenttest.phaser.thread;
 
-import concurrenttest.phaser.service.PrintTools;
 import concurrenttest.phaser.serviceImpl.Service_Run01;
-
-import java.util.concurrent.Phaser;
 
 /**
  * 描述:

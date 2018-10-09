@@ -1,10 +1,9 @@
 package concurrenttest.phaser.runtest;
 
-import concurrenttest.phaser.thread.ThreadTest;
+import java.util.concurrent.Phaser;
+
 import concurrenttest.phaser.thread.ThreadTest01;
 import concurrenttest.phaser.thread.ThreadTestA;
-
-import java.util.concurrent.Phaser;
 
 /**
  * 描述:Phaser类测试

@@ -2,8 +2,6 @@ package concurrenttest.cyclicbarrier.serviceimpl;
 
 import java.util.concurrent.BrokenBarrierException;
 import java.util.concurrent.CyclicBarrier;
-import java.util.concurrent.TimeUnit;
-import java.util.concurrent.TimeoutException;
 
 import concurrenttest.cyclicbarrier.service.Service_Run;
 
