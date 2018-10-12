@@ -14,7 +14,7 @@ import concurrenttest.executors.threaddemo.RunnableTest;
 public class RunTest_newCachedThreadPool01 {
 
 	public static void main(String[] args) throws InterruptedException {
-		// TODO Auto-generated method stub
+		//创建一个根据需要创建新线程的线程池，但在可用时将重新使用以前构造的线程。
 		ExecutorService executorService = Executors.newCachedThreadPool();
 		for (int i = 0; i < 5; i++) {
 			executorService.execute(new RunnableTest(""+(i+1)));

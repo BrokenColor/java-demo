@@ -14,6 +14,7 @@ public class RunTest01 {
 	public static void main(String[] args) {
 		//创建一个根据需要创建新线程的线程池，但在可用时将重新使用以前构造的线程。
 		ExecutorService executorService = Executors.newCachedThreadPool();
+		//在将来的某个时间执行给定的命令。 该命令可以在一个新线程，一个合并的线程中或在调用线程中执行，由Executor实现。
 		executorService.execute(new Runnable() {
 			
 			@Override
