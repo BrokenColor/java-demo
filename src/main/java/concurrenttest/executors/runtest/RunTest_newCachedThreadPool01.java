@@ -3,7 +3,7 @@ package concurrenttest.executors.runtest;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-import concurrenttest.executors.runnable.RunnableTest;
+import concurrenttest.executors.threaddemo.RunnableTest;
 
 /**
  * 描述：newCachedThreadPool

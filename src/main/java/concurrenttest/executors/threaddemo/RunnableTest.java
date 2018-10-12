@@ -1,4 +1,4 @@
-package concurrenttest.executors.runnable;
+package concurrenttest.executors.threaddemo;
 
 /**
  * 描述：创建一个线程
