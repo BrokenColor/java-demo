@@ -7,6 +7,8 @@
 >### semaphoredemo-包（Semaphore实现限制线程并发数test）
 >### countdownlatch-包（countdownlatch类test）
 >### cyclicbarrier-包（cyclicbarrier类test）
+>### phaser-包（phaser类test）
+>### executors-包（executors类test
 
 ## src\test\java\javatest包-（其他测试）
 >java测试demo
