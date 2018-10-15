@@ -8,7 +8,8 @@ import concurrenttest.threadpoolexecutor.threaddemo.RunnableTest;
 
 /**
  * 描述：ThreadPoolExecutor 构造方法test
- * 
+ * 队列使用得了LinkedBlockingQueue类
+ * 线程数<=corePoolSize
  * @author BrokenColor
  * @date 2018年10月15日
  */
@@ -25,9 +26,9 @@ public class RunTest_Constructor {
 		 *	workQueue - 在执行任务之前用于保存任务的队列。 该队列将仅保存execute方法提交的Runnable任务。
 		 *
 		 */
-		//----LinkedBlockingQueue
-		ThreadPoolExecutor executor = new ThreadPoolExecutor(7, 8, 5, TimeUnit.SECONDS, new LinkedBlockingQueue<>());
-		
+		//----LinkedBlockingQueue----
+		ThreadPoolExecutor executor = new ThreadPoolExecutor(7, 8, 5, TimeUnit.SECONDS, new LinkedBlockingQueue<Runnable>());
+		//线程数<=corePoolSize
 		for (int i = 0; i < 7; i++) {
 			executor.execute(runnable);
 		}
