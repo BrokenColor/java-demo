@@ -9,7 +9,7 @@ import concurrenttest.threadpoolexecutor.threaddemo.RunnableTest03;
 
 /**
  * 描述：ThreadPoolExecutor类方法测试
- * shutdownNow
+ * 测试shutdownNow时，正在等待执行的任务是否执行
  * @author BrokenColor
  * @date 2018年10月15日
  */
