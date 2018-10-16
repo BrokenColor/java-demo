@@ -12,7 +12,7 @@ public class RunnableTest00 implements Runnable {
 	public void run() {
 		try {
 			System.out.println("begin "+Thread.currentThread().getName()+" "+System.currentTimeMillis());
-			Thread.sleep(5000);
+			Thread.sleep(2000);
 			System.out.println("end "+Thread.currentThread().getName()+" "+System.currentTimeMillis());
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
