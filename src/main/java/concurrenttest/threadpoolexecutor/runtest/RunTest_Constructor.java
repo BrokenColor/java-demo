@@ -40,6 +40,7 @@ public class RunTest_Constructor {
 		System.out.println("B.CorePoolSize:"+executor.getCorePoolSize());
 		System.out.println("B.PoolSize:"+executor.getPoolSize());
 		System.out.println("B.Queue.size:"+executor.getQueue().size());
+		
 	}
 
 }

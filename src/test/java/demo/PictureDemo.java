@@ -1,8 +1,9 @@
-package java.demo;
+package demo;
 
 import java.awt.Color;
 import java.awt.Font;
-import java.util.AddContent2Picture;
+
+import util.AddContent2Picture;
 
 /**
  * 描述：可以用于生成自定义的水印

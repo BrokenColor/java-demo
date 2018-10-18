@@ -1,9 +1,9 @@
-package java.demo;
+package demo;
 
 import java.io.File;
 import java.net.MalformedURLException;
 import java.util.List;
-import java.util.OtherUtil;
+import util.OtherUtil;
 
 import org.dom4j.Document;
 import org.dom4j.DocumentException;
