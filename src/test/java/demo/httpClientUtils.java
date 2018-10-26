@@ -197,6 +197,7 @@ public class httpClientUtils {
 
 	/**
 	 * 删除
+	 * 在HttpClient.delete()不接受身体参数。
 	 * 
 	 * @param url
 	 * @param dataForm
