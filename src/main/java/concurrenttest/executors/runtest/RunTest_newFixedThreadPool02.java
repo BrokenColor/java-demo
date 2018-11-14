@@ -8,6 +8,7 @@ import concurrenttest.executors.threaddemo.ThreadFactoryTest;
 /**
  * 描述：创建一个线程池，重用固定数量的线程，从共享无界队列中运行，使用提供的ThreadFactory在需要时创建新线程。
  * newFixedThreadPool(2, factory)
+ * 
  * @author BrokenColor
  * @date 2018年10月12日
  */
@@ -15,7 +16,7 @@ public class RunTest_newFixedThreadPool02 {
 
 	public static void main(String[] args) {
 		ThreadFactoryTest factory = new ThreadFactoryTest();
-		//创建一个线程池，重用固定数量的线程，从共享无界队列中运行，使用提供的ThreadFactory在需要时创建新线程。
+		// 创建一个线程池，重用固定数量的线程，从共享无界队列中运行，使用提供的ThreadFactory在需要时创建新线程。
 		ExecutorService executorService = Executors.newFixedThreadPool(2, factory);
 
 		Runnable runnable = new Runnable() {

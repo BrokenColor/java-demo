@@ -7,6 +7,7 @@ import concurrenttest.executors.threaddemo.RunnableTest;
 
 /**
  * 描述：newCachedThreadPool
+ * 
  * @author BrokenColor
  * @date 2018年10月11日
  */
@@ -16,7 +17,7 @@ public class RunTest_newCachedThreadPool {
 		// TODO Auto-generated method stub
 		ExecutorService executorService = Executors.newCachedThreadPool();
 		for (int i = 0; i < 10; i++) {
-			executorService.execute(new RunnableTest(""+(i+1)));
+			executorService.execute(new RunnableTest("" + (i + 1)));
 		}
 	}
 
