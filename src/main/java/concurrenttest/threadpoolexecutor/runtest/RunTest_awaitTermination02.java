@@ -29,9 +29,9 @@ public class RunTest_awaitTermination02 {
 		pool.execute(runnable);
 		pool.shutdown();
 		//验证：任务完成，则取消阻塞继续执行后面的代码
-		System.out.println(pool.awaitTermination(Integer.MAX_VALUE, TimeUnit.SECONDS)+ " "+ System.currentTimeMillis());
+		System.out.println(pool.awaitTermination(Integer.MAX_VALUE, TimeUnit.SECONDS)+ " "
+				+ System.currentTimeMillis());
 		System.out.println("全部完成");
-		
 
 	}
 
