@@ -9,7 +9,7 @@ import concurrenttest.threadpoolexecutor.threaddemo.RunnableTest2;
 
 /**
  * 描述：对线程池中的线程进行定制
- * 
+ * setThreadFactory()
  * @author BrokenColor
  * @date 2018年11月17日
  */
