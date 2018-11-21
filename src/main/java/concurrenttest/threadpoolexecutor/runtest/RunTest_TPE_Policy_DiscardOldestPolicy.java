@@ -17,7 +17,7 @@ public class RunTest_TPE_Policy_DiscardOldestPolicy {
 
 	public static void main(String[] args) throws InterruptedException {
 		
-		ArrayBlockingQueue queue = new ArrayBlockingQueue<>(2);
+		ArrayBlockingQueue queue = new ArrayBlockingQueue<Runnable>(2);
 		ThreadPoolExecutor pool = new ThreadPoolExecutor(2, 3, 5, TimeUnit.SECONDS, queue, new ThreadPoolExecutor.DiscardOldestPolicy());
 		for (int i = 0; i < 5; i++) {
 			RunnableTest04 runnable = new RunnableTest04("eason:"+(i+1));

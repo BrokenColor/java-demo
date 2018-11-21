@@ -18,7 +18,7 @@ public class RunTest_TPE_Policy_DiscardPolicy {
 
 		RunnableTest runnable = new RunnableTest();
 		// 默认初始化大小2
-		LinkedBlockingQueue link = new LinkedBlockingQueue<>(2);
+		LinkedBlockingQueue link = new LinkedBlockingQueue<Runnable>(2);
 		ThreadPoolExecutor executor = new ThreadPoolExecutor(2, 3, 5, TimeUnit.SECONDS, link,
 				new ThreadPoolExecutor.DiscardPolicy());
 		executor.execute(runnable);// 1

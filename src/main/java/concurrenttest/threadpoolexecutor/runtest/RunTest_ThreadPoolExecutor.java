@@ -18,7 +18,7 @@ public class RunTest_ThreadPoolExecutor {
 	public static void main(String[] args) {
 		RunnableTest00 runnable = new RunnableTest00();
 		ThreadPoolExecutor pool = new ThreadPoolExecutor(2, 999, 999, TimeUnit.SECONDS, 
-				new LinkedBlockingQueue<>(), new ThreadFactoryA());
+				new LinkedBlockingQueue<Runnable>(), new ThreadFactoryA());
 		
 		//也可通过以下方式设置自定义的ThreadFactory
 //		pool.setThreadFactory(new ThreadFactoryA());

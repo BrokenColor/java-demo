@@ -16,7 +16,7 @@ public class RunnableTest_Policy implements Runnable {
 	public void run() {
 		RunnableTest00 runnable = new RunnableTest00();
 		// 默认初始化大小2
-		LinkedBlockingQueue link = new LinkedBlockingQueue<>(2);
+		LinkedBlockingQueue link = new LinkedBlockingQueue<Runnable>(2);
 		ThreadPoolExecutor executor = new ThreadPoolExecutor(2, 3, 5, TimeUnit.SECONDS, link,
 				new ThreadPoolExecutor.CallerRunsPolicy());
 		executor.execute(runnable);// 1

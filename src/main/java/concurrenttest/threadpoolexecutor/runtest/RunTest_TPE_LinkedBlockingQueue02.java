@@ -19,7 +19,7 @@ public class RunTest_TPE_LinkedBlockingQueue02 {
 		RunnableTest runnable = new RunnableTest();
 		//初始化大小
 		//队列容量不够，有一个任务出现异常
-		LinkedBlockingQueue link = new LinkedBlockingQueue<>(2);
+		LinkedBlockingQueue link = new LinkedBlockingQueue<Runnable>(2);
 		System.out.println(link.size());
 		ThreadPoolExecutor executor = new ThreadPoolExecutor(2, 3, 5, TimeUnit.SECONDS, link);
 		executor.execute(runnable);//1

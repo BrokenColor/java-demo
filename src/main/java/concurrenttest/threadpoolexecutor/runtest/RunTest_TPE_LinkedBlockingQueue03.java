@@ -18,7 +18,7 @@ public class RunTest_TPE_LinkedBlockingQueue03 {
 		
 		RunnableTest runnable = new RunnableTest();
 		//默认初始化大小Integer.MAX_VALUE
-		LinkedBlockingQueue link = new LinkedBlockingQueue<>();
+		LinkedBlockingQueue link = new LinkedBlockingQueue<Runnable>();
 		System.out.println(link.size());
 		ThreadPoolExecutor executor = new ThreadPoolExecutor(2, 3, 5, TimeUnit.SECONDS, link);
 		executor.execute(runnable);//1

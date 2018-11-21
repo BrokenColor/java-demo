@@ -32,9 +32,9 @@ import org.apache.http.protocol.HTTP;
 import org.apache.http.util.EntityUtils;
 
 /**
- * 
+ *
  * 描述：HttpClient工具类
- * 
+ *
  * @author BrokenColor
  * @date 2018年10月26日
  */
@@ -44,7 +44,7 @@ public class httpClientUtils {
 
 	/**
 	 * get请求
-	 * 
+	 *
 	 * @return
 	 * @throws Exception
 	 */
@@ -90,7 +90,7 @@ public class httpClientUtils {
 
 	/**
 	 * post请求(用于key-value格式的参数)
-	 * 
+	 *
 	 * @param url
 	 * @param params
 	 * @return
@@ -144,7 +144,7 @@ public class httpClientUtils {
 
 	/**
 	 * put map传参
-	 * 
+	 *
 	 * @param url
 	 * @param params
 	 * @return
@@ -198,7 +198,7 @@ public class httpClientUtils {
 	/**
 	 * 删除
 	 * 在HttpClient.delete()不接受身体参数。
-	 * 
+	 *
 	 * @param url
 	 * @param dataForm
 	 * @return
