@@ -5,7 +5,7 @@ import concurrenttest.future_callable.callabledemo.Callable_Test;
 import java.util.concurrent.*;
 
 /**
- * 描述：
+ * 描述：Callable中submit()方法 测试
  *
  * @author BrokenColor
  * @date 2018年11月21日
