@@ -3,7 +3,7 @@ package concurrenttest.future_callable.callabledemo;
 import concurrenttest.future_callable.entity.Userinfo;
 
 /**
- * 描述：
+ * 描述：userinfo对象
  * 
  * @author BrokenColor
  * @date 2018年11月22日
