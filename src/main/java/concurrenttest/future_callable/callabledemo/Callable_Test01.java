@@ -28,7 +28,7 @@ public class Callable_Test01 implements Callable<String> {
 	@Override
 	public String call() throws Exception {
 		Thread.sleep(8000);
-		return "返回值 年龄是：" ;
+		return "返回值 是：" + userinfo.getUsername();
 	}
 
 }
