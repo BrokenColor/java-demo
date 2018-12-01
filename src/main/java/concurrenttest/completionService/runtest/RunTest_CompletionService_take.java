@@ -8,6 +8,7 @@ import java.util.concurrent.Executors;
 
 /**
  * 描述：CompletionServiced的take的方法测试
+ * take的方法 具有阻塞效果
  * 
  * @author BrokenColor
  * @date 2018年12月1日
