@@ -1,9 +1,6 @@
 package concurrenttest.future_callable.runtest;
 
 import java.lang.Thread.UncaughtExceptionHandler;
-import java.util.concurrent.Callable;
-import java.util.concurrent.ExecutionException;
-import java.util.concurrent.Future;
 import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.ThreadFactory;
 import java.util.concurrent.ThreadPoolExecutor;
