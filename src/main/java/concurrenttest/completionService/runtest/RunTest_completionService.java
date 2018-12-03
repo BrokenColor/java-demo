@@ -15,6 +15,8 @@ import concurrenttest.completionService.callabledemo.Callable_Test;
 
 /**
  * 描述：CompletionService 类测试
+ * 一种将新异步任务的生产与已完成任务的结果消耗相分离的服务。 
+ * 生产者submit执行任务。 消费者take完成任务并按照完成的顺序处理其结果
  * 	CompletionService可以解决Future阻塞的问题
  * 
  * @author BrokenColor
