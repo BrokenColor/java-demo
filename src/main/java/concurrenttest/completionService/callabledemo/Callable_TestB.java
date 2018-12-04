@@ -3,7 +3,7 @@ package concurrenttest.completionService.callabledemo;
 import java.util.concurrent.Callable;
 
 /**
- * 描述：callableA
+ * 描述：callableBs
  * 
  * @author BrokenColor
  * @date 2018年12月3日

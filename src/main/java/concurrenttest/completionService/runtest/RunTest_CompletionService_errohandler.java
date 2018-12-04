@@ -30,7 +30,7 @@ public class RunTest_CompletionService_errohandler {
 			cs.submit(callableB);
 			//B虽然出现异常，但是没有调用FutureTask类的get()方法，所以未出现异常
 			for (int i = 0; i < 2; i++) {
-				System.out.println("cs.take():"+cs.take().get());
+				System.out.println("cs.take().get():"+cs.take().get());
 //				System.out.println("cs.take():"+cs.take());
 			}
 			System.out.println("mian end"+System.currentTimeMillis());
