@@ -1,6 +1,7 @@
 package concurrenttest.completionService.runtest;
 
 import java.util.concurrent.CompletionService;
+import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Executor;
 import java.util.concurrent.ExecutorCompletionService;
 import java.util.concurrent.Executors;
@@ -25,7 +26,7 @@ public class RunTest_CompletionService_errohandler {
 			Callable_TestB callableB = new Callable_TestB();
 			
 			Executor executor = Executors.newSingleThreadExecutor();
-			CompletionService cs = new ExecutorCompletionService<>(executor);
+			CompletionService cs = new ExecutorCompletionService(executor);
 			cs.submit(callableA);
 			cs.submit(callableB);
 			//B虽然出现异常，但是没有调用FutureTask类的get()方法，所以未出现异常
@@ -34,7 +35,9 @@ public class RunTest_CompletionService_errohandler {
 //				System.out.println("cs.take():"+cs.take());
 			}
 			System.out.println("mian end"+System.currentTimeMillis());
-		} catch (Exception e) {
+		} catch (InterruptedException e) {
+			e.getStackTrace();
+		} catch (ExecutionException e) {
 			e.getStackTrace();
 		}
 	}
