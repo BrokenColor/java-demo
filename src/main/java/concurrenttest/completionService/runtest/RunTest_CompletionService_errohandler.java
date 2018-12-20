@@ -25,7 +25,7 @@ public class RunTest_CompletionService_errohandler {
 			Callable_TestB callableB = new Callable_TestB();
 			
 			Executor executor = Executors.newSingleThreadExecutor();
-			CompletionService<String> cs = new ExecutorCompletionService(executor);
+			CompletionService<String> cs = new ExecutorCompletionService<String>(executor);
 			cs.submit(callableA);
 			cs.submit(callableB);
 			//B虽然出现异常，但是没有调用FutureTask类的get()方法，所以未出现异常
