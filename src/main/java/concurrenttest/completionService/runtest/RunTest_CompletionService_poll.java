@@ -22,7 +22,7 @@ public class RunTest_CompletionService_poll {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		ExecutorService executorService = Executors.newCachedThreadPool();
-		CompletionService completionService = new ExecutorCompletionService<>(executorService);
+		CompletionService<String> completionService = new ExecutorCompletionService<>(executorService);
 		for (int i = 0; i < 10; i++) {
 			completionService.submit(new Callable<String>() {
 				@Override

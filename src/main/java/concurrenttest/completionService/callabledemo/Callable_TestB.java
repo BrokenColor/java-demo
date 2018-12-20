@@ -16,6 +16,7 @@ public class Callable_TestB implements Callable<String> {
 		Thread.sleep(5000);
 		int i = 0;
 		if (i == 0) {
+			System.out.println("抛出异常");
 			throw new Exception("抛出异常");
 		}
 		System.out.println("callableB end: "+System.currentTimeMillis());
