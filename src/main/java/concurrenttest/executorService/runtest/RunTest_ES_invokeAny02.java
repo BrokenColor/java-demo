@@ -28,14 +28,14 @@ public class RunTest_ES_invokeAny02 {
 		try {
 			List list = new ArrayList<>();
 			list.add(new CallableA());
-			//CallableB2中有if (Thread.currentThread().interrupted())
+			// CallableB2中有if (Thread.currentThread().interrupted())
 			list.add(new CallableB2());
-			
+
 			ExecutorService es = Executors.newCachedThreadPool();
-			//执行给定的任务，返回一个成功完成的结果（即没有抛出异常），如果有的话。
-			//取得最先完成任务的结果值
+			// 执行给定的任务，返回一个成功完成的结果（即没有抛出异常），如果有的话。
+			// 取得最先完成任务的结果值
 			String result = (String) es.invokeAny(list);
-			System.out.println("getvalue:"+result);
+			System.out.println("getvalue:" + result);
 			System.out.println("ok");
 		} catch (Exception e) {
 			e.printStackTrace();
