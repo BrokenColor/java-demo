@@ -16,7 +16,10 @@ public class CallableB4 implements Callable<String> {
 	public String call() throws Exception {
 		try {
 			System.out.println("B4 begin" + System.currentTimeMillis());
-			for (int i = 0; i < 223; i++) {
+			////执行慢的异常
+//			for (int i = 0; i < 223; i++) {
+			//执行快的异常
+			for (int i = 0; i < 23; i++) {
 					Math.random();
 					Math.random();
 					Math.random();

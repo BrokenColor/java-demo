@@ -10,7 +10,7 @@ import concurrenttest.executorService.threaddemo.CallableB3;
 import concurrenttest.executorService.threaddemo.CallableB4;
 
 /**
- * 描述：invokeAny(Collection<? extends Callable<T>> tasks)
+ * 描述：invokeAny与执行的任务异常
  * 执行给定的任务，返回一个成功完成的结果（即没有抛出异常），如果有的话。
  * 虽然invokeAny方法取到了returnA的值，但是线程B依然在进行，知道运行完毕
  * 线程B中断了，但是抛出的空指针异常没有在控制台打印输出
@@ -28,7 +28,9 @@ public class RunTest_ES_invokeAny03 {
 		try {
 			List list = new ArrayList<>();
 			list.add(new CallableA());
+			//invokeAny与执行的任务异常（线程中未添加显示try-catch）
 //			list.add(new CallableB3());
+			//invokeAny与执行慢/快的的任务异常
 			list.add(new CallableB4());
 			
 			ExecutorService es = Executors.newCachedThreadPool();
@@ -38,6 +40,7 @@ public class RunTest_ES_invokeAny03 {
 			System.out.println("getvalue:"+result);
 			System.out.println("ok");
 		} catch (Exception e) {
+			System.out.println("mainB");
 			e.printStackTrace();
 		}
 	}
