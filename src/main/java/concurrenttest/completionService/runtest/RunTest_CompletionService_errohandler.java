@@ -38,7 +38,7 @@ public class RunTest_CompletionService_errohandler {
 			}
 			System.out.println("mian end"+System.currentTimeMillis());
 		} catch (Exception e) {
-			e.getStackTrace();
+			e.printStackTrace();
 		}
 	}
 
