@@ -40,7 +40,7 @@ public class RunTest_CompletionService_poll {
 				System.out.println(completionService.poll());
 			}
 		} catch (Exception e) {
-			e.getStackTrace();
+			e.printStackTrace();
 		}
 
 	}

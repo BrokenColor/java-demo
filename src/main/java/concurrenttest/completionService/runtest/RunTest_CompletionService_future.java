@@ -29,7 +29,7 @@ public class RunTest_CompletionService_future {
 			Future<UserInfo> future = cs.submit(runable,userInfo);
 			System.out.println(future.get().getUsername()+" "+future.get().getPassword());
 		} catch (Exception e) {
-			e.getStackTrace();
+			e.printStackTrace();
 		}
 	}
 

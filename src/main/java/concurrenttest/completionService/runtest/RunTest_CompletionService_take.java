@@ -39,7 +39,7 @@ public class RunTest_CompletionService_take {
 				System.out.println(completionService.take().get());
 			}
 		} catch (Exception e) {
-			e.getStackTrace();
+			e.printStackTrace();
 		}
 
 	}

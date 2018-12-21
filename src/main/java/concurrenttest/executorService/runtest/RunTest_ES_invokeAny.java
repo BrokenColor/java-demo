@@ -35,7 +35,7 @@ public class RunTest_ES_invokeAny {
 			System.out.println("getvalue:"+result);
 			System.out.println("ok");
 		} catch (Exception e) {
-			e.getStackTrace();
+			e.printStackTrace();
 		}
 		//虽然invokeAny方法取到了returnA的值，但是线程B依然在进行，知道运行完毕
 	}

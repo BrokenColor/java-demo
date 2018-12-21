@@ -25,7 +25,7 @@ public class RunTest01 {
 					System.out.println("A");
 					System.out.println("Runnable end "+System.currentTimeMillis());
 				} catch (Exception e) {
-					// TODO: handle exception
+					e.printStackTrace();
 				}
 				
 			}

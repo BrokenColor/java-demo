@@ -38,7 +38,7 @@ public class RunTest_ES_invokeAny02 {
 			System.out.println("getvalue:"+result);
 			System.out.println("ok");
 		} catch (Exception e) {
-			e.getStackTrace();
+			e.printStackTrace();
 		}
 	}
 

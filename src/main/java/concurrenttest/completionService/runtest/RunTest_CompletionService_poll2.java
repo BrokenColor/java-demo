@@ -43,7 +43,7 @@ public class RunTest_CompletionService_poll2 {
 			}
 			System.out.println("main end");
 		} catch (Exception e) {
-			e.getStackTrace();
+			e.printStackTrace();
 		}
 
 	}
