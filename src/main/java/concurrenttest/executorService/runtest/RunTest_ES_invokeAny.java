@@ -6,7 +6,9 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 import concurrenttest.executorService.threaddemo.CallableA;
+import concurrenttest.executorService.threaddemo.CallableA_sleep;
 import concurrenttest.executorService.threaddemo.CallableB;
+import concurrenttest.executorService.threaddemo.CallableB_sleep;
 
 /**
  * 描述：invokeAny(Collection<? extends Callable<T>> tasks)
@@ -25,8 +27,8 @@ public class RunTest_ES_invokeAny {
 	public static void main(String[] args) {
 		try {
 			List list = new ArrayList<>();
-			list.add(new CallableA());
-			list.add(new CallableB());
+			list.add(new CallableA_sleep());
+			list.add(new CallableB_sleep());
 
 			ExecutorService es = Executors.newCachedThreadPool();
 			// 执行给定的任务，返回一个成功完成的结果（即没有抛出异常），如果有的话。
