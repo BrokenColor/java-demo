@@ -7,7 +7,7 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 
 import concurrenttest.executorService.threaddemo.CallableA;
-import concurrenttest.executorService.threaddemo.CallableB3;
+import concurrenttest.executorService.threaddemo.CallableB4;
 
 /**
  * 描述：invokeAll(Collection<? extends Callable<T>> tasks)
@@ -25,15 +25,17 @@ public class RunTest_ES_invokeAll03 {
 	public static void main(String[] args) {
 		try {
 			List list = new ArrayList<>();
-			//执行快的正常,慢的异常
+			//执行慢的正常,快的异常
+			//添加顺序与运行结果有联系
+			list.add(new CallableB4());
 			list.add(new CallableA());
-			list.add(new CallableB3());
 
 			ExecutorService es = Executors.newCachedThreadPool();
 			// 执行给定的任务，返回持有他们的状态和结果的所有完成的List<Future<T>>列表
 			//阻塞
 			List<Future<String>> listFuture = es.invokeAll(list);
-			System.out.println("invokeAll end"+System.currentTimeMillis());
+			System.out.println("invokeAll end:"+System.currentTimeMillis());
+			//第一次出现异常 不再继续执行第二次循环,进入catch块中
 			for (int i = 0; i < listFuture.size(); i++) {
 				System.out.println("return:" + listFuture.get(i).get() + " " + System.currentTimeMillis());
 			}
