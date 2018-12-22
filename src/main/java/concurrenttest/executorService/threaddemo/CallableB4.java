@@ -33,6 +33,8 @@ public class CallableB4 implements Callable<String> {
 		} catch (Exception e) {
 			e.printStackTrace();
 			System.out.println(e.getMessage() + "通过显示的try-catch捕获异常");
+			//需要重新抛出异常，否则主线程将无法获取到异常，从而认为线程正常结束，依然会返回该线程的结果
+			//可将此行代码注释进行测试
 			throw e;
 		}
 		return "returnB4";
