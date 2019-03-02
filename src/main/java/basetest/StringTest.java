@@ -1,0 +1,30 @@
+package basetest;
+
+import java.util.UUID;
+
+/**
+ * 描述：string test
+ * 
+ * @author BrokenColor
+ * @date 2019年1月16日
+ */
+public class StringTest {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		//截取测试
+		String str0 = "A12300000";
+		String str1 = "A12300000-12";
+		String[] strs0 = str0.split("-");
+		String[] strs1 = str1.split("-");
+		System.out.println("strs0 " +strs0.length);
+		System.out.println("strs1 " +strs1.length);
+		System.out.println(Integer.parseInt(strs1[1])+"1");
+		
+		//uuid测试
+		String struuid = UUID.randomUUID().toString().replaceAll("-", "");
+		System.out.println(struuid.length());
+		System.out.println(struuid);
+	}
+
+}
