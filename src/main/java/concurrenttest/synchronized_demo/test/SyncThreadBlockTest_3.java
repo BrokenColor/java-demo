@@ -3,7 +3,7 @@ package concurrenttest.synchronized_demo.test;
 import concurrenttest.synchronized_demo.threadtest.SyncThreadBlock_2;
 
 /**
- * 描述：synchronized 修饰一个代码块
+ * 描述：synchronized 修饰一个代码块<br>
  * 一个线程访问一个对象中的synchronized(this)同步代码块时，其他试图访问该对象的线程将被阻塞
  * 
  * @author BrokenColor

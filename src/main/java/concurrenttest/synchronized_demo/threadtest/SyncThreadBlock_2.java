@@ -1,7 +1,7 @@
 package concurrenttest.synchronized_demo.threadtest;
 
 /**
- * 描述：synchronized 修饰一个代码块
+ * 描述：synchronized 修饰一个代码块<br>
  * 当一个线程访问对象的一个synchronized(this)同步代码块时，
  * 另一个线程仍然可以访问该对象中的非synchronized(this)同步代码块。 
  * 

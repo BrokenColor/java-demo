@@ -3,7 +3,7 @@ package concurrenttest.synchronized_demo.test;
 import concurrenttest.synchronized_demo.threadtest.SyncThreadMethod;
 
 /**
- * 描述：synchronized 修饰一个方法
+ * 描述：synchronized 修饰一个方法<br>
  * 一个线程访问一个对象中的synchronized同步方法时，其他试图访问该对象的线程将被阻塞
  * 
  * @author BrokenColor
