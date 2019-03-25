@@ -12,7 +12,7 @@ public class Factory_Pattern {
 		Factory_Pattern f1 = new Factory_Pattern();
 		
 		FactoryShape factory = f1.new FactoryShape();
-		
+
 		Shape shape1 = factory.getTypeShape("Rectangle");
 		shape1.draw();
 		Shape shape2 = factory.getTypeShape("Square");
