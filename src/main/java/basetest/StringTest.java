@@ -15,6 +15,7 @@ public class StringTest {
 		//截取测试
 		String str0 = "A12300000";
 		String str1 = "A12300000-12";
+		str0.length();
 		String[] strs0 = str0.split("-");
 		String[] strs1 = str1.split("-");
 		System.out.println("strs0 " +strs0.length);

@@ -1,4 +1,4 @@
-package algorithmCode.DesignPattern;
+package algorithmCode.designPattern;
 
 /**
  * 描述：工厂模式

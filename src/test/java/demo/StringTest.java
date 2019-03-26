@@ -2,7 +2,11 @@ package demo;
 
 /**
  * 描述：String使用equals和==比较的区别
- * 
+ * 对于==：如果是基本类型变量，则直接比较其存储的值，
+ * 		如果是引用类型，则比较的是所指向的对象的地址
+ * 对于equals：注意：equals不能用于基础数据类型的变量
+ * 		如果未对equals方法重新的话，则比较的是引用类型所指向的对象的地址
+ * 		String，Date等类对equals进行了重写，比较的是所指向对象的内容
  * @author BrokenColor
  * @date 2018年10月18日
  */
@@ -14,7 +18,9 @@ public class StringTest {
 		String a = new String("java");
 		String b = new String("java");
 		System.out.println("=============");
+		//String对equals进行了重写
 		System.out.println(a == b); // false
+		//string类对equals方法进行了重写，用来比较指向的字符串对象所存储的的字符串是否相等
 		System.out.println(a.equals(b)); // true
 
 		// 例子二：同一对象，"=="和equals结果相同
