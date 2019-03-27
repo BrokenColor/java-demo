@@ -1,9 +1,9 @@
 package algorithmCode.base;
 
-import java.lang.reflect.Array;
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collection;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Stack;
 
 /**
  * 描述：快速排序
@@ -16,11 +16,62 @@ public class QuickSort {
 	public static void main(String[] args) {
 		int[] arr = { 4, 3, 1, 8, 7, 9, 5, 6, 4, 7, 2, 5, 3, 7, 5 };
 		QuickSort quickSort = new QuickSort();
-		quickSort.QuickSortMethod(arr,0,arr.length-1);
+//		quickSort.quickSortRecursion(arr,0,arr.length-1);
+		quickSort.quickSortStack(arr,0,arr.length-1);
 		System.out.println(Arrays.toString(arr));
 	}
+	//递归的方式
+	public void quickSortRecursion(int[] arr, int startIndex, int endIndex) {
+		//// 递归结束条件：startIndex大等于endIndex的时候
+		if (startIndex > endIndex) {
+			return;
+		}
+		// 得到基准元素位置（两种方式）
+//		int pivotIndex = position(arr, startIndex, endIndex);
+		int pivotIndex = position1(arr, startIndex, endIndex);
+		// 用分治法递归数列的两部分
+		quickSortRecursion(arr, pivotIndex + 1, endIndex);
+		quickSortRecursion(arr, startIndex , pivotIndex - 1);
 
-	// 找到基准的位置
+	}
+
+	//栈的方式
+	public void quickSortStack(int[] arr,int startIndex, int endIndex){
+		if (startIndex > endIndex) {
+			return;
+		}
+		//用一个集合栈来代替递归的函数栈
+		Stack<Map<String, Integer>> quickSortStack = new Stack<>();
+		// 整个数列的起止下标，以哈希的形式入栈
+		Map<String, Integer> rootParam = new HashMap<>(16); 
+		rootParam.put("startIndex", startIndex);
+		rootParam.put("endIndex", endIndex);
+		quickSortStack.push(rootParam);
+		// 循环结束条件：栈为空时结束
+		while (!quickSortStack.isEmpty()) {
+			//// 栈顶元素出栈，得到起止下标
+			Map<String, Integer> params = quickSortStack.pop();
+			// 得到基准元素位置（两种方式）
+//			int pivotIndex = position(arr, startIndex, endIndex);
+			int pivotIndex = position1(arr, params.get("startIndex"), params.get("endIndex"));
+			//根据基准元素分成两部分, 把每一部分的起止下标入栈==>右侧
+			if (pivotIndex - 1 > params.get("startIndex")) {
+				Map<String, Integer> leftparam = new HashMap<>(16);
+				leftparam.put("startIndex", params.get("startIndex"));
+				leftparam.put("endIndex", pivotIndex - 1);
+				quickSortStack.push(leftparam);
+			}
+			//左边
+			if (pivotIndex + 1 < params.get("endIndex")) {
+				Map<String, Integer> rightparam = new HashMap<>(16);
+				rightparam.put("startIndex", pivotIndex + 1);
+				rightparam.put("endIndex", params.get("endIndex"));
+				quickSortStack.push(rightparam);
+			}
+		}
+	}
+	
+	//找到基准的位置
 	public int position(int[] arr, int startIndex, int endIndex) {
 		// 取第一个位置的元素作为基准元素
 		int pivot = arr[startIndex];
@@ -54,18 +105,34 @@ public class QuickSort {
 		arr[index] = pivot;
 		return index;
 	}
-
-	public void QuickSortMethod(int[] arr, int startIndex, int endIndex) {
-		//// 递归结束条件：startIndex大等于endIndex的时候
-		if (startIndex >= endIndex) {
-			return;
+	//指针交换法
+	public int position1(int[] arr,int startIndex,int endIndex) {
+		// 取第一个位置的元素作为基准元素
+		int pivot = arr[startIndex];
+		int left = startIndex;
+		int right = endIndex;
+		while(left < right) {
+			//控制right指针比较并左移
+			while (left < right && pivot < arr[right]) {
+				right--;
+			}
+			//控制right指针比较并右移
+			while (left < right && arr[left] <= pivot) {
+				left++;
+			}
+			//交换left和right指向的元素
+			if (left < right) {
+				int p = arr[right];
+				arr[right] = arr[left];
+				arr[left] = p;
+			}
 		}
-		// 得到基准元素位置
-		int pivotIndex = position(arr, startIndex, endIndex);
-		// 用分治法递归数列的两部分
-		QuickSortMethod(arr, pivotIndex + 1, endIndex);
-		QuickSortMethod(arr, startIndex , pivotIndex - 1);
-
+		//pivot和指针重合点交换
+		int p = arr[startIndex];
+		arr[startIndex] = arr[left];
+		arr[left] = p;
+		return left;
 	}
+	
 
 }
