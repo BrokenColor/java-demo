@@ -5,6 +5,8 @@ import java.util.Arrays;
 /**
  * 描述：选择排序
  * 
+ * 最佳情况：T(n) = O(n2)  最差情况：T(n) = O(n2)  平均情况：T(n) = O(n2)
+ * 
  * @author BrokenColor
  * @date 2019年4月1日
  */

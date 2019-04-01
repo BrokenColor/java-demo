@@ -8,6 +8,8 @@ import java.util.Stack;
 /**
  * 描述：快速排序
  * 
+ * 最佳情况：T(n) = O(nlogn)   最差情况：T(n) = O(n2)   平均情况：T(n) = O(nlogn)　
+ * 
  * @author BrokenColor
  * @date 2019年3月26日
  */
