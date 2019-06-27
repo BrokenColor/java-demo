@@ -2,6 +2,8 @@ package concurrenttest.future_callable.callabledemo;
 
 import java.util.concurrent.Callable;
 
+import concurrenttest.future_callable.entity.Userinfo;
+
 /**
  * 描述：Callable_Test 
  * return "返回值 年龄是：" + age;
@@ -9,13 +11,13 @@ import java.util.concurrent.Callable;
  * @author BrokenColor
  * @date 2018年11月21日
  */
-public class Callable_Test implements Callable<String> {
+public class Callable_Test01 implements Callable<String> {
 
-	private int age;
+	private Userinfo userinfo;
 
-	public Callable_Test(int age) {
+	public Callable_Test01(Userinfo userinfo) {
 		super();
-		this.age = age;
+		this.userinfo = userinfo;
 	}
 
 	/*
@@ -26,8 +28,7 @@ public class Callable_Test implements Callable<String> {
 	@Override
 	public String call() throws Exception {
 		Thread.sleep(8000);
-		System.out.println("sleep 8秒");
-		return "返回值 年龄是：" + age;
+		return "返回值 是：" + userinfo.getUsername();
 	}
 
 }

@@ -9,11 +9,11 @@ import java.util.concurrent.Callable;
  * @author BrokenColor
  * @date 2018年11月21日
  */
-public class Callable_Test implements Callable<String> {
+public class Callable_Test04 implements Callable<String> {
 
 	private int age;
 
-	public Callable_Test(int age) {
+	public Callable_Test04(int age) {
 		super();
 		this.age = age;
 	}
@@ -25,8 +25,7 @@ public class Callable_Test implements Callable<String> {
 	 */
 	@Override
 	public String call() throws Exception {
-		Thread.sleep(8000);
-		System.out.println("sleep 8秒");
+		Integer.parseInt("a");
 		return "返回值 年龄是：" + age;
 	}
 
