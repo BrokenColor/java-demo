@@ -41,5 +41,17 @@
     	<artifactId>httpclient</artifactId>
     	<version>4.5.5</version>
     </dependency>
+      <dependency>
+          <groupId>org.apache.commons</groupId>
+          <artifactId>commons-compress</artifactId>
+          <version>1.18</version>
+          <scope>test</scope>
+      </dependency>
+      <dependency>
+          <groupId>org.slf4j</groupId>
+          <artifactId>slf4j-api</artifactId>
+          <version>1.7.26</version>
+          <scope>test</scope>
+      </dependency>
   </dependencies>
 </project>
