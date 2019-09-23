@@ -1,5 +1,8 @@
 package basetest;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * 描述：算法练习
  * Given nums = [2, 7, 11, 15], target = 9,
@@ -13,10 +16,10 @@ public class SolutionMain {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		int[] nums = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 0 };
-		int target = 2;
+		int[] nums = { 3,2,4 };
+		int target = 6;
 		SolutionMain mianClass = new SolutionMain();
-		int[] solution = mianClass.twoSum(nums, target);
+		int[] solution = mianClass.twoSumP(nums, target);
 		
 		for (int i = 0; i < solution.length; i++) {
 			System.out.println("index:" + solution[i]);
@@ -32,6 +35,20 @@ public class SolutionMain {
 					return returnInts;
 				}
 			}
+		}
+		return null;
+	}
+
+	public int[] twoSumP(int[] nums, int target) {
+		Map<Integer, Integer> map = new HashMap();
+		int temp;
+		for (int i = 0; i < nums.length; i++) {
+			temp = target - nums[i];
+			if (map.containsKey(temp)) {
+				int[] solution = {map.get(temp), i};
+				return solution;
+			}
+			map.put(nums[i], i);
 		}
 		return null;
 	}
