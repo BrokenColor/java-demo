@@ -3,9 +3,7 @@ package basetest;
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
@@ -21,6 +19,7 @@ public class StreamTest {
     static List<String> nameList = Arrays.asList("Darcy", "Chris", "Linda", "Sid", "Kim", "Jack", "Poul", "Peter");
     static String[] nameArr = {"Darcy", "Chris", "Linda", "Sid", "Kim", "Jack", "Poul", "Peter"};
     static List<Integer> numberList = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9);
+    static List<Integer> ageList = Arrays.asList(11, 22, 13, 14, 25, 26);
 
     public static void main(String[] args) throws FileNotFoundException {
         streamDemo();
@@ -39,6 +38,8 @@ public class StreamTest {
         findFirstTest();
         //collect
         collectTest();
+        //limit skip
+        limitOrSkipTest();
     }
 
     /**
@@ -159,7 +160,7 @@ public class StreamTest {
     }
 
     /**
-     *findFirst 可以查找出 Stream 流中的第一个元素，它返回的是一个 Optional 类型
+     * findFirst 可以查找出 Stream 流中的第一个元素，它返回的是一个 Optional 类型
      * findFirst 方法在查找到需要的数据之后就会返回不再遍历数据了，
      * 也因此 findFirst 方法可以对有无限数据的 Stream 流进行操作，
      * 也可以说 findFirst 是一个 short-circuiting 操作
@@ -169,12 +170,58 @@ public class StreamTest {
         Optional<Integer> firstNumber = numberList.stream().findFirst();
         System.out.println(firstNumber.orElse(-1));//如果没有值，获取默认值
     }
+
     /**
-     *findFirst 可以查找出 Stream 流中的第一个元素，它返回的是一个 Optional 类型
+     * Stream 流可以轻松的转换为其他结构
      */
     public static void collectTest() {
         System.out.println("collectTest");
-
+        //to Arraay
+        Integer[] toArray = numberList.stream().toArray(Integer[]::new);
+        System.out.println(toArray.toString());
+        //to List
+        List<Integer> integerList = numberList.stream()
+                .collect(Collectors.toList());
+        System.out.println(integerList.toString());
+        //to Set
+        Set<Integer> integersSet = numberList.stream()
+                .collect(Collectors.toSet());
+        System.out.println(integersSet);
+        //to String
+        String toString = numberList.stream()
+                .map(number -> String.valueOf(number))
+                .collect(Collectors.joining());
+        System.out.println(toString);
+        //to String split by ','
+        String toStringByJoin = numberList.stream()
+                .map(number -> String.valueOf(number))
+                .collect(Collectors.joining(","));
+        System.out.println(toStringByJoin);
         System.out.println();
+    }
+
+    /**
+     * limitOrSkipTest
+     */
+    public static void limitOrSkipTest() {
+        ageList.stream().limit(3).forEach(age -> System.out.print(age + ","));
+        System.out.println();
+        ageList.stream().skip(3).forEach(age -> System.out.print(age + ","));
+        System.out.println();
+    }
+
+    /**
+     * 数学统计功能，求一组数组的最大值、最小值、个数、数据和、平均数等
+     */
+    public static void mathTest() {
+        List<Integer> list = Arrays.asList(1, 2, 3, 4, 5, 6);
+        IntSummaryStatistics intSummaryStatistics = list.stream()
+                .mapToInt(x -> x)
+                .summaryStatistics();
+        System.out.println("最大值：" + intSummaryStatistics.getMax());
+        System.out.println("最小值：" + intSummaryStatistics.getMin());
+        System.out.println("个数：" + intSummaryStatistics.getCount());
+        System.out.println("求和：" + intSummaryStatistics.getSum());
+        System.out.println("平均值：" + intSummaryStatistics.getAverage());
     }
 }
