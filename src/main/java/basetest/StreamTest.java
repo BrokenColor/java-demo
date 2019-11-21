@@ -48,6 +48,10 @@ public class StreamTest {
         partitioningByTest();
         //generate
         generateTest();
+        //惰性计算
+        lazyTest();
+        //并行计算
+        main();
 
     }
 
@@ -239,7 +243,7 @@ public class StreamTest {
 
     /**
      * 分组聚合功能，和数据库的 Group by 的功能一致。
-     *  按年龄分组
+     * 按年龄分组
      */
     public static void groupingByTest() {
         System.out.println("groupingByTest");
@@ -263,17 +267,73 @@ public class StreamTest {
         System.out.println(ageGrouyByMap.get(false));
         System.out.println(ageGrouyByMap.get(true));
     }
-   /**
+
+    /**
      * 生成自己的 Stream 流
      */
     public static void generateTest() {
         System.out.println("generateTest");
         // 生成自己的随机数流
-        Random random  = new Random();
+        Random random = new Random();
         Stream<Integer> generateRandom = Stream.generate(random::nextInt);
         generateRandom.limit(5).forEach(System.out::println);
         // 生成自己的 UUID 流
         Stream<UUID> generate = Stream.generate(UUID::randomUUID);
         generate.limit(5).forEach(System.out::println);
+    }
+
+
+    /**
+     * 数据处理/转换（intermedia） 操作 map (mapToInt, flatMap 等)、
+     * filter、 distinct、 sorted、 peek、 limit、 skip、 parallel、 sequential、 unordered 等这些操作，
+     * 在调用方法时并不会立即调用，而是在真正使用的时候才会生效，这样可以让操作延迟到真正需要使用的时刻。
+     * <p>
+     * 如果没有 惰性计算，那么很明显会先输出偶数，然后输出 分割线。
+     */
+    public static void lazyTest() {
+        // 生成自己的随机数流
+        List<Integer> numberLIst = Arrays.asList(1, 2, 3, 4, 5, 6);
+        // 找出偶数
+        Stream<Integer> integerStream = numberLIst.stream()
+                .filter(number -> {
+                    int temp = number % 2;
+                    if (temp == 0) {
+                        System.out.println(number);
+                    }
+                    return temp == 0;
+                });
+
+        System.out.println("分割线");
+        List<Integer> collect = integerStream.collect(Collectors.toList());
+    }
+
+    /**
+     * 并行计算
+     * 获取 Stream 流时可以使用 parallelStream 方法代替 stream 方法以获取并行处理流，
+     * 并行处理可以充分的发挥多核优势，而且不增加编码的复杂性。
+     */
+    public static void main() {
+        // 生成自己的随机数流，取一千万个随机数
+        Random random = new Random();
+        Stream<Integer> generateRandom = Stream.generate(random::nextInt);
+        List<Integer> numberList = generateRandom.limit(10000000).collect(Collectors.toList());
+
+        // 串行 - 把一千万个随机数，每个随机数 * 2 ，然后求和
+        long start = System.currentTimeMillis();
+        int sum = numberList.stream()
+                .map(number -> number * 2)
+                .mapToInt(x -> x)
+                .sum();
+        long end = System.currentTimeMillis();
+        System.out.println("串行耗时：" + (end - start) + "ms " + "sum:" + sum);
+
+        // 并行 - 把一千万个随机数，每个随机数 * 2 ，然后求和
+        start = System.currentTimeMillis();
+        sum = numberList.parallelStream()
+                .map(number->number*2)
+                .mapToInt(x->x)
+                .sum();
+        end = System.currentTimeMillis();
+        System.out.println("并行耗时：" + (end - start) + "ms " + "sum:" + sum);
     }
 }
