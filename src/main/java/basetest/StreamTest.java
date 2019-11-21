@@ -40,6 +40,15 @@ public class StreamTest {
         collectTest();
         //limit skip
         limitOrSkipTest();
+        //math
+        mathTest();
+        //groupingBy
+        groupingByTest();
+        //partitioningBy
+        partitioningByTest();
+        //generate
+        generateTest();
+
     }
 
     /**
@@ -204,6 +213,7 @@ public class StreamTest {
      * limitOrSkipTest
      */
     public static void limitOrSkipTest() {
+        System.out.println("limitOrSkipTest");
         ageList.stream().limit(3).forEach(age -> System.out.print(age + ","));
         System.out.println();
         ageList.stream().skip(3).forEach(age -> System.out.print(age + ","));
@@ -214,6 +224,7 @@ public class StreamTest {
      * 数学统计功能，求一组数组的最大值、最小值、个数、数据和、平均数等
      */
     public static void mathTest() {
+        System.out.println("mathTest");
         List<Integer> list = Arrays.asList(1, 2, 3, 4, 5, 6);
         IntSummaryStatistics intSummaryStatistics = list.stream()
                 .mapToInt(x -> x)
@@ -223,5 +234,46 @@ public class StreamTest {
         System.out.println("个数：" + intSummaryStatistics.getCount());
         System.out.println("求和：" + intSummaryStatistics.getSum());
         System.out.println("平均值：" + intSummaryStatistics.getAverage());
+        System.out.println();
+    }
+
+    /**
+     * 分组聚合功能，和数据库的 Group by 的功能一致。
+     *  按年龄分组
+     */
+    public static void groupingByTest() {
+        System.out.println("groupingByTest");
+        List<Integer> ageList = Arrays.asList(11, 22, 13, 14, 25, 26);
+        Map<String, List<Integer>> ageGrouyByMap = ageList.stream()
+                .collect(Collectors.groupingBy(age -> String.valueOf(age / 10)));
+        ageGrouyByMap.forEach((k, v) -> {
+            System.out.println("年龄" + k + "0多岁的有：" + v);
+        });
+    }
+
+    /**
+     * 按某个条件分组
+     * 给一组年龄，分出成年人和未成年人
+     */
+    public static void partitioningByTest() {
+        System.out.println("partitioningByTest");
+        List<Integer> ageList = Arrays.asList(11, 22, 13, 14, 25, 26);
+        Map<Boolean, List<Integer>> ageGrouyByMap = ageList.stream()
+                .collect(Collectors.partitioningBy(age -> age > 18));
+        System.out.println(ageGrouyByMap.get(false));
+        System.out.println(ageGrouyByMap.get(true));
+    }
+   /**
+     * 生成自己的 Stream 流
+     */
+    public static void generateTest() {
+        System.out.println("generateTest");
+        // 生成自己的随机数流
+        Random random  = new Random();
+        Stream<Integer> generateRandom = Stream.generate(random::nextInt);
+        generateRandom.limit(5).forEach(System.out::println);
+        // 生成自己的 UUID 流
+        Stream<UUID> generate = Stream.generate(UUID::randomUUID);
+        generate.limit(5).forEach(System.out::println);
     }
 }
