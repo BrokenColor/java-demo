@@ -2,8 +2,8 @@ package basetest;
 
 public class Ｂitwise {
     public static void main(String[] args) {
-//        int i = 12;
-        int i = -12;
+        int i = 12;
+//        int i = -12;
 
         //将一个数的各二进制位全部右移N位，移到右边的低位被舍弃，对于无符号数高位补0，负数高位补1.
         int a = i >> 0;
