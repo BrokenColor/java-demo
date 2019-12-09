@@ -1,6 +1,6 @@
 package basetest;
 
-public class Ｂitwise {
+public class Bitwise {
     public static void main(String[] args) {
         int i = 12;
 //        int i = -12;
