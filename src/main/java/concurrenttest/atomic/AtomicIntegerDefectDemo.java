@@ -14,7 +14,7 @@ public class AtomicIntegerDefectDemo {
         final AtomicInteger atomicInteger = new AtomicInteger(1);
         Thread thread1 = new Thread(() -> {
             final int currentValue = atomicInteger.get();
-            System.out.println("currentValue:" + currentValue);
+            System.out.println(Thread.currentThread().getName() + " ------ currentValue=" + currentValue);
             try {
                 Thread.sleep(300);
             } catch (InterruptedException e) {
