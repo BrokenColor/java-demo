@@ -12,6 +12,7 @@ public class trycatch {
 	public static void main(String[] args) {
 		try {
 			System.out.println("aaa");
+//			throw new Exception("我报错了");
 			return ;
 //			System.out.println("bb");
 		} catch (Exception e) {
