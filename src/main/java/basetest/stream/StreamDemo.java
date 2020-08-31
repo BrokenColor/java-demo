@@ -1,4 +1,4 @@
-package basetest;
+package basetest.stream;
 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
@@ -15,7 +15,7 @@ import java.util.stream.Stream;
  * Stream 和迭代器一样的只能单向处理
  * 数据源（source） -> 数据处理/转换（intermedia） -> 结果处理（terminal ）
  */
-public class StreamTest {
+public class StreamDemo {
     static List<String> nameList = Arrays.asList("Darcy", "Chris", "Linda", "Sid", "Kim", "Jack", "Poul", "Peter");
     static String[] nameArr = {"Darcy", "Chris", "Linda", "Sid", "Kim", "Jack", "Poul", "Peter"};
     static List<Integer> numberList = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9);
