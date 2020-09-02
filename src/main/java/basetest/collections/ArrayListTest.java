@@ -1,4 +1,4 @@
-package basetest;
+package basetest.collections;
 
 import java.util.ArrayList;
 import java.util.List;
