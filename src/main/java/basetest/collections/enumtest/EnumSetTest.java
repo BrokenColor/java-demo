@@ -1,4 +1,4 @@
-package basetest.collections;
+package basetest.collections.enumtest;
 
 import java.util.EnumSet;
 import java.util.List;
