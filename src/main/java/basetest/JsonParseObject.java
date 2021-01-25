@@ -1,13 +1,20 @@
 package basetest;
 
 import com.alibaba.fastjson.JSONArray;
+import org.apache.commons.lang.StringEscapeUtils;
 
 import java.util.List;
 
 public class JsonParseObject {
     public static void main(String[] args) {
         String userIdentify = "[{\"code\":\"creditGuarantee\",\"ext\":{\"isFirstOrder\":\"true\",\"isQualifiedV4\":\"true\",\"admitMode\":\"CREDIT_SCORE\"}},{\"code\":\"memberInfoR4\"},{\"code\":\"mk_memberR4\"},{\"code\":\"mk_train\"},{\"code\":\"hotelBargainUser\"},{\"code\":\"dongChengNewUser\"},{\"code\":\"trainUser\"},{\"code\":\"flightMember\"},{\"code\":\"tripUser\"},{\"code\":\"loginUser\"}]";
+        String userIdentify1 = "[{\"code\":\"creditCheck\",\"ext\":\"{\\\"admitMode\\\":\\\"CREDIT_SCORE\\\",\\\"zhiMaMiscDebt\\\":false,\\\"isQualifiedV4\\\":false,\\\"isFirstOrder\\\":true,\\\"availMoney\\\":\\\"10000.00\\\",\\\"reasonCode\\\":0}\"},{\"code\":\"creditGuarantee\"},{\"code\":\"newUser\"},{\"code\":\"hStarFirst\"},{\"code\":\"mk_newUser\"},{\"code\":\"mk_hStarFirst\"},{\"code\":\"huaZhuNewUser\"},{\"code\":\"ruJiaNewUser\"},{\"code\":\"dongChengNewUser\"},{\"code\":\"yaDuoNewUser\"},{\"code\":\"loginUser\"}]";
+        String tmp = StringEscapeUtils.unescapeJavaScript(userIdentify);
+        String tmp1 = StringEscapeUtils.unescapeJavaScript(userIdentify1);
         List<UserIdentify> userIdentifies = JSONArray.parseArray(userIdentify, UserIdentify.class);
+        List<UserIdentify> userIdentifies1 = JSONArray.parseArray(userIdentify1, UserIdentify.class);
+        List<UserIdentify> tmps = JSONArray.parseArray(tmp, UserIdentify.class);
+        List<UserIdentify> tmp1s = JSONArray.parseArray(tmp1, UserIdentify.class);
         System.out.println(userIdentify);
     }
 
@@ -15,91 +22,27 @@ public class JsonParseObject {
         /**
          * 身份编码
          */
-        String Code;
+        String code;
 
         /**
          * 扩展信息
          */
-        Ext ext;
+        String ext;
 
         public String getCode() {
-            return Code;
+            return code;
         }
 
         public void setCode(String code) {
-            Code = code;
+            code = code;
         }
 
-        public Ext getExt() {
+        public String getExt() {
             return ext;
         }
 
-        public void setExt(Ext ext) {
+        public void setExt(String ext) {
             this.ext = ext;
-        }
-
-        class Ext {
-            /**
-             * 出于让用户在出错时不会漏看协议或漏激活，设置了这个默认值信用担保和闪住是否首单
-             */
-            private boolean isFirstOrder;
-            /**
-             * 只能使用押金闪住
-             */
-            private boolean isQualifiedV4;
-            /**
-             * 闪住授信渠道;"CREDIT_SCORE", "信用分";"IOUS", "拿去花"
-             */
-            private String admitMode;
-
-            /**
-             * 可用金额
-             */
-            private String availMoney;
-            /**
-             * 错误码
-             */
-            private int reasonCode;
-
-            public boolean isFirstOrder() {
-                return isFirstOrder;
-            }
-
-            public void setFirstOrder(boolean firstOrder) {
-                isFirstOrder = firstOrder;
-            }
-
-            public boolean isQualifiedV4() {
-                return isQualifiedV4;
-            }
-
-            public void setQualifiedV4(boolean qualifiedV4) {
-                isQualifiedV4 = qualifiedV4;
-            }
-
-            public String getAdmitMode() {
-                return admitMode;
-            }
-
-            public void setAdmitMode(String admitMode) {
-                this.admitMode = admitMode;
-            }
-
-            public String getAvailMoney() {
-                return availMoney;
-            }
-
-            public void setAvailMoney(String availMoney) {
-                this.availMoney = availMoney;
-            }
-
-            public int getReasonCode() {
-                return reasonCode;
-            }
-
-            public void setReasonCode(int reasonCode) {
-                this.reasonCode = reasonCode;
-            }
         }
     }
 
