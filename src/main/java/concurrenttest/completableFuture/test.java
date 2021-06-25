@@ -35,9 +35,28 @@ public class test {
             System.out.println("run supplyAsync: " + Thread.currentThread().getName());
             return "return supplyAsync";
         }, executor);
-//        System.out.println("::"+supplyAsync.get());
 
-//        runAsync.thenCombineAsync()
+        CompletableFuture<String> supplyAsync1 = CompletableFuture.supplyAsync(() -> {
+            System.out.println("run supplyAsync1: " + Thread.currentThread().getName());
+            return "return supplyAsync1";
+        }, executor).thenApply((res) -> {
+            System.out.println("thenRunAsync:" + res);
+            try {
+                Thread.sleep(5000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            return "return thenApply";
+        }).thenApplyAsync((res) -> {
+            System.out.println("thenApplyAsync:" + res);
+            return "return thenApplyAsync";
+        });
+
+//        supplyAsync.thenCombineAsync(supplyAsync1, null, executor);
+
+        System.out.println("::" + supplyAsync1.get());
+
+//        runAsync.thenCombineAsync();
         System.out.println("main end..");
     }
 }
