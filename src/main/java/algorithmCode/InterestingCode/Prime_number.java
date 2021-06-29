@@ -27,6 +27,26 @@ public class Prime_number {
 			}
 		}
 		System.out.println("101-200之间有素数:" + count + "个");
+
+		System.out.println(prime(100));
+	}
+
+	//n以内的素数个数
+	public static int prime(int n){
+		//记录ture为合数，false为素数
+		boolean[] primes = new boolean[n];
+		int count = 0;
+		//0，1 除外，从2开始遍历
+		for (int i = 2; i < n; i++) {
+			if (!primes[i]){
+				count++;
+				for (int j = i * i; j < n; j += i) {
+					primes[j] = true;//为合数
+				}
+			}
+
+		}
+		return count;
 	}
 
 }
