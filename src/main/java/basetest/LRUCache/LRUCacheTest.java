@@ -9,9 +9,13 @@ package basetest.LRUCache;
  * Date: Create in 11:22 2020/8/17
  */
 public class LRUCacheTest {
-    private static LRUCache<String, Integer> cache = new LRUCache<>(10);
+    private static LRUCacheByLinkedHashMap<String, Integer> cache = new LRUCacheByLinkedHashMap<>(10);
 
     public static void main(String[] args) {
+//        test();
+        test1();
+    }
+    public static void test(){
         for (int i = 0; i < 10; i++) {
             cache.put("k" + i, i);
         }
@@ -24,5 +28,19 @@ public class LRUCacheTest {
         System.out.println("get k4  :" + cache );
         cache.put("k" + 10, 10);
         System.out.println("After running the LRU algorithm cache :" + cache );
+    }
+
+    public static  void test1(){
+        //[1, 1], [2, 2], [1], [3, 3], [2], [4, 4], [1], [3], [4]]
+        LRUCache lruCache = new LRUCache(2);
+        lruCache.put(1,1);
+        lruCache.put(2,2);
+        System.out.println(lruCache.get(1));
+        lruCache.put(3,3);
+        System.out.println(lruCache.get(2));
+        lruCache.put(4,4);
+        System.out.println(lruCache.get(1));
+        System.out.println(lruCache.get(3));
+        System.out.println(lruCache.get(4));
     }
 }
