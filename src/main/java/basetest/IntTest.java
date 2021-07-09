@@ -9,7 +9,8 @@ package basetest;
  */
 public class IntTest {
     public static void main(String[] args) {
-        testInteger();
+//        testInteger();
+        testFor();
     }
 
     /**
@@ -25,5 +26,24 @@ public class IntTest {
         Integer b = new Integer(3);
         System.out.println(a == b);//false
         System.out.println(a.equals(b));//true
+    }
+
+    public static void testFor(){
+        int k = 0;
+        for (int i = 0; i < 10; ++i) {
+            System.out.print(" i=" + i);
+            System.out.print(" ++k=" + ++k);
+            System.out.print(" k=" + k);
+            System.out.println();
+        }
+        System.out.println();
+        int j = 0;
+        for (int i = 0; i < 10; i++) {
+            System.out.print(" i=" + i);
+            System.out.print(" j++=" + j++);
+            System.out.print(" j=" + j);
+            System.out.println();
+        }
+
     }
 }
