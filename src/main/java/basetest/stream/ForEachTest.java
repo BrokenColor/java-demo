@@ -1,5 +1,8 @@
 package basetest.stream;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * @author guwanli
  * @date 2021/8/17 11:07 上午
@@ -15,5 +18,9 @@ public class ForEachTest extends StreamDemo {
         System.out.println("forEach");
         numberList.stream().forEach(number -> System.out.print(number + ","));
         System.out.println();
+
+        //list为空会报错吗
+        List<String> list = new ArrayList<>();
+        list.forEach(System.out::println);
     }
 }
