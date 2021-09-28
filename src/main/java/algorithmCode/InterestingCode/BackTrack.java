@@ -20,7 +20,7 @@ public class BackTrack {
 
     public static void main(String[] args) {
         int[] nums = {1, 2, 3};
-        //路径记录
+        //【路径】记录
         LinkedList<Integer> track = new LinkedList<>();
         backtrack(nums, track);
         System.out.println(res);
@@ -45,6 +45,7 @@ public class BackTrack {
         for (int num : nums) {
             //当前循环处理过的跳过
             if (track.contains(num)) continue;
+            //添加到【路径】中
             track.add(num);
             //向下处理
             backtrack(nums, track);
