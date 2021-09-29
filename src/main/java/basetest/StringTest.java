@@ -1,5 +1,10 @@
 package basetest;
 
+import org.apache.commons.lang.SystemUtils;
+
+import java.io.File;
+import java.net.URLDecoder;
+import java.net.URLEncoder;
 import java.util.Arrays;
 import java.util.UUID;
 
@@ -36,10 +41,20 @@ public class StringTest {
         System.out.println(s2.intern() == s2);
 
 
-        String encodeStr = "中文能/解析/文件名.tmp";
-        System.out.println(Arrays.toString(encodeStr.split("/")));
-        System.out.println(encodeStr.substring(encodeStr.lastIndexOf("/") + 1));
+        String chStr = "中文能/解析/文件名.tmp";
+        System.out.println(Arrays.toString(chStr.split("/")));
+        System.out.println(chStr.substring(chStr.lastIndexOf("/") + 1));
 
+        String decodeStr = "https://mps-gaia-prod-sg2.obs.ap-southeast-3.myhuaweicloud.com:443/dev%2Fmcds%2Fgroup%2F1.xlsx";
+        String encodeStr = "https://mps-gaia-prod-sg2.obs.ap-southeast-3.myhuaweicloud.com:443/dev/mcds/group/1.xlsx";
+
+        String decode = URLDecoder.decode(decodeStr);
+        System.out.println(decode);
+        String encode = URLEncoder.encode(encodeStr);
+        System.out.println(encode);
+
+        System.out.println(SystemUtils.FILE_SEPARATOR);
+        System.out.println(File.separator);
     }
 
 }
