@@ -2,6 +2,7 @@ package basetest.collections.list;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.atomic.AtomicInteger;
 
 /**
  * @Author: bc
@@ -25,5 +26,32 @@ public class ArrayListTest {
         for (int i = 0; i < strings.length; i++) {
             System.out.println(strings[i]);
         }
+
+        System.out.println("++++++++++");
+        int n = 8;
+        List<List<String>> lists = new ArrayList<>();
+        for (int i = 0; i < n; i++) {
+            lists.add(new ArrayList<>());
+            for (int j = 0; j < n; j++) {
+                lists.get(i).add(".");
+            }
+        }
+        AtomicInteger atomi = new AtomicInteger();
+        lists.forEach(item -> {
+            System.out.print(atomi.getAndIncrement()+":");
+            item.forEach(System.out::print);
+            System.out.println();
+        });
+
+        System.out.println("---------");
+        List<String> listq = new ArrayList<>();
+        for (int i = 0; i < n; i++) {
+            StringBuilder stringBuilder = new StringBuilder();
+            for (int j = 0; j < n; j++) {
+                stringBuilder.append(".");
+            }
+            listq.add(stringBuilder.toString());
+        }
+        listq.forEach(System.out::println);
     }
 }

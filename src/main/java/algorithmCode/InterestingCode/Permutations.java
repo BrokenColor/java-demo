@@ -11,7 +11,7 @@ import java.util.List;
  * @author guwanli
  * @date 2021/9/28 8:20 下午
  */
-public class BackTrack {
+public class Permutations {
     /**
      * //输入：nums = [1,2,3]
      * //输出：[[1,2,3],[1,3,2],[2,1,3],[2,3,1],[3,1,2],[3,2,1]]
