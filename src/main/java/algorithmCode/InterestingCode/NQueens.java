@@ -59,7 +59,7 @@ public class NQueens {
     private boolean invalid(List<StringBuilder> track, int row, int col) {
         int size = track.get(row).length();
         //当前列[row-1][col]
-        for (int i = row; i > 0; i--) {
+        for (int i = row; i >= 0; i--) {
             if (track.get(i).charAt(col) == 'Q') {
                 return false;
             }
@@ -71,7 +71,7 @@ public class NQueens {
             }
         }
         //右上[row-1][col+1]
-        for (int i = row - 1, j = col + 1; i > 0 && j < size; i--, j++) {
+        for (int i = row - 1, j = col + 1; i >= 0 && j < size; i--, j++) {
             if (track.get(i).charAt(j) == 'Q') {
                 return false;
             }
