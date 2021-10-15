@@ -11,14 +11,14 @@ import java.util.stream.Collectors;
  * @author guwanli
  * @date 2021/9/29 8:46 下午
  */
-public class NQueens {
+public class LC_51_H_NQueens {
 
     private List<List<String>> res = new ArrayList<>();
 
     public static void main(String[] args) {
         int n = 4;
-        NQueens nQueens = new NQueens();
-        System.out.println(nQueens.solveNQueens(n));
+        LC_51_H_NQueens leetCode51NQueens = new LC_51_H_NQueens();
+        System.out.println(leetCode51NQueens.solveNQueens(n));
     }
 
     public List<List<String>> solveNQueens(int n) {

@@ -8,7 +8,7 @@ import java.util.Arrays;
  * @author guwanli
  * @date 2021/9/23 8:07 下午
  */
-public class CoinChange {
+public class LC_322_M_CoinChange {
     //输入：coins = [1, 2, 5], amount = 11
     //输出：3
     //解释：11 = 5 + 5 + 1
