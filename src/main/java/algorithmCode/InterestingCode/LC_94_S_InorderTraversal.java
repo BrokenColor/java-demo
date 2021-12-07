@@ -1,5 +1,7 @@
 package algorithmCode.InterestingCode;
 
+import algorithmCode.InterestingCode.entity.TreeNode;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -29,24 +31,5 @@ public class LC_94_S_InorderTraversal {
         inorder(root.left, res);
         res.add(root.val);
         inorder(root.right, res);
-    }
-}
-//节点
-class TreeNode {
-    int val;
-    TreeNode left;
-    TreeNode right;
-
-    TreeNode() {
-    }
-
-    TreeNode(int val) {
-        this.val = val;
-    }
-
-    TreeNode(int val, TreeNode left, TreeNode right) {
-        this.val = val;
-        this.left = left;
-        this.right = right;
     }
 }
