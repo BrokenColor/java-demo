@@ -9,10 +9,11 @@ package algorithmCode.InterestingCode;
 public class LC_1143_M_LongestCommonSubsequence {
     public static void main(String[] args) {
         LC_1143_M_LongestCommonSubsequence solution = new LC_1143_M_LongestCommonSubsequence();
-        String text1 = "bl", text2 = "yby";
+        String text1 = "abcde", text2 = "ace";
         System.out.println(solution.longestCommonSubsequence(text1, text2));
     }
 
+    //转化为二维数组
     public int longestCommonSubsequence(String text1, String text2) {
         if (text1.length() < 1 || text2.length() < 1) return 0;
         int length1 = text1.length();
