@@ -52,6 +52,14 @@ public class LC_1020_M_NumEnclaves {
         return res;
     }
 
+    /**
+     * dfs 深度优先遍历
+     *
+     * @param grid 地图
+     * @param i    x
+     * @param j    y
+     * @return
+     */
     public int dfs(int[][] grid, int i, int j) {
         if (i < 0 || j < 0 || i >= grid.length || j >= grid[0].length) return 0;
 
