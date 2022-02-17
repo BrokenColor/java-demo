@@ -26,8 +26,9 @@ public class LC_19_M_RemoveNthFromEnd {
     public ListNode removeNthFromEnd(ListNode head, int n) {
         ListNode dummy = new ListNode(-1);
         dummy.next = head;
+        // 删除倒数第 n 个，要先找倒数第 n + 1 个节点
         ListNode node = findNode(dummy, n + 1);
-
+        // 删掉倒数第 n 个节点
         node.next = node.next.next;
 
         return dummy.next;
