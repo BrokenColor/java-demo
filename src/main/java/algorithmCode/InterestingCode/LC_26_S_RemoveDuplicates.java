@@ -26,9 +26,11 @@ public class LC_26_S_RemoveDuplicates {
         for (int j = 1; j < nums.length; j++) {
             if (nums[i] != nums[j]) {
                 i++;
+                //维护 nums[0..i] 无重复
                 nums[i] = nums[j];
             }
         }
+        // 数组长度为索引 + 1
         return i + 1;
 
     }
