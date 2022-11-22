@@ -1,7 +1,7 @@
 package algorithmCode.InterestingCode;
 
 /**
- * 26.移除重复元素
+ * 26.删除有序数组中的重复项
  *
  * @author guwanli
  * @date 2022/11/22 16:00
