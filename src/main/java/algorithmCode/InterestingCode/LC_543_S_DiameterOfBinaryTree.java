@@ -22,8 +22,22 @@ public class LC_543_S_DiameterOfBinaryTree {
 
     public int diameterOfBinaryTree(TreeNode root) {
         // 对每个节点计算直径，求最大直径
-        traverse(root);
+        maxDepth(root);
         return res;
+    }
+
+    // 计算二叉树的最大深度
+    private int maxDepth(TreeNode node) {
+        if (node == null) {
+            return 0;
+        }
+        int left = maxDepth(node.left);
+        int right = maxDepth(node.right);
+        // 后序位置，顺便计算最大直径
+        int myDiameter = left + right;
+        res = Math.max(res, myDiameter);
+
+        return 1 + Math.max(left, right);
     }
 
     // 遍历二叉树
@@ -38,16 +52,5 @@ public class LC_543_S_DiameterOfBinaryTree {
         //处理下一层
         traverse(node.left);
         traverse(node.right);
-    }
-
-    // 计算二叉树的最大深度
-    private int maxDepth(TreeNode node) {
-        if (node == null) {
-            return 0;
-        }
-        int left = maxDepth(node.left);
-        int right = maxDepth(node.right);
-        int max = Math.max(left, right);
-        return max + 1;
     }
 }
