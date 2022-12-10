@@ -6,10 +6,19 @@ import java.util.List;
 
 /**
  * 47.全排列II
+ *
  * @author guwanli
  * @date 2022/11/29 19:46
  */
 public class LC_47_M_PermuteUnique {
+
+    public static void main(String[] args) {
+        LC_47_M_PermuteUnique solution = new LC_47_M_PermuteUnique();
+        int[] nums = {1, 2, 2, 3, 3, 4, 4, 5, 6, 6};
+        solution.permuteUnique(nums);
+        System.out.println(solution.res);
+    }
+
     List<List<Integer>> res = new LinkedList<>();
     LinkedList<Integer> track = new LinkedList<>();
     //标记是否被使用
@@ -34,8 +43,9 @@ public class LC_47_M_PermuteUnique {
         for (int i = 0; i < nums.length; i++) {
             //是否被使用过
             if (used[i]) continue;
-            //与前一位相同，且被使用过
+            //与前一位相同，固定相同的元素在排列中的相对位置
             if (i > 0 && nums[i] == nums[i - 1] && !used[i - 1]) {
+                // 如果前面的相邻相等元素没有用过，则跳过
                 continue;
             }
             //选择
