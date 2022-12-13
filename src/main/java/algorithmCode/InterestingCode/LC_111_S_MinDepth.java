@@ -20,13 +20,18 @@ public class LC_111_S_MinDepth {
         //遍历队列
         while (!queue.isEmpty()) {
             int size = queue.size();
+            //处理同一级的元素
             for (int i = 0; i < size; i++) {
+                //队列中去一个元素
                 TreeNode node = queue.poll();
+                //base case
                 if (node.left == null && node.right == null) return depth;
 
+                //添加做左节点
                 if (node.left != null) {
                     queue.offer(node.left);
                 }
+                //添加做右节点
                 if (node.right != null) {
                     queue.offer(node.right);
                 }
