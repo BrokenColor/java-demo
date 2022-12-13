@@ -9,7 +9,7 @@ import java.util.Set;
  * 752 打开转盘锁
  * BFS(广度优先搜索)
  *
- * @author guwanli
+ * @author bc
  * @date 2021/10/15 8:05 下午
  */
 public class LC_752_M_OpenLock {
