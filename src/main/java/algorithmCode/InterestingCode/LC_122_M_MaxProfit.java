@@ -3,7 +3,7 @@ package algorithmCode.InterestingCode;
 /**
  * 122. 买卖股票的最佳时机 II
  *
- * @author guwanli
+ * @author bc
  * @date 2021/12/17 10:24
  */
 public class LC_122_M_MaxProfit {
