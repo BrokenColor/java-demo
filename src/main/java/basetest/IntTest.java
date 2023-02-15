@@ -1,5 +1,9 @@
 package basetest;
 
+import org.apache.commons.lang.time.DateUtils;
+
+import java.util.Date;
+
 /**
  * IntTest
  *
@@ -10,7 +14,8 @@ package basetest;
 public class IntTest {
     public static void main(String[] args) {
 //        testInteger();
-        testFor();
+//        testFor();
+        testInt();
     }
 
     /**
@@ -28,7 +33,7 @@ public class IntTest {
         System.out.println(a.equals(b));//true
     }
 
-    public static void testFor(){
+    public static void testFor() {
         int k = 0;
         for (int i = 0; i < 10; ++i) {
             System.out.print(" i=" + i);
@@ -44,6 +49,17 @@ public class IntTest {
             System.out.print(" j=" + j);
             System.out.println();
         }
+    }
 
+
+    public static void testInt() {
+        Date now = new Date();
+        long nowTime = now.getTime();
+        Date date = DateUtils.addDays(now, -1);
+        long diffTime = nowTime - date.getTime();
+
+        long diffDay = (diffTime / DateUtils.MILLIS_PER_DAY) + 1;
+        int periodInterval = 2;
+        System.out.println(diffDay % periodInterval);
     }
 }
