@@ -12,7 +12,9 @@ public class LC_26_S_RemoveDuplicates {
         LC_26_S_RemoveDuplicates solution = new LC_26_S_RemoveDuplicates();
         int[] nums = {2, 2, 3, 4, 5, 6};
         int i = solution.removeDuplicates(nums);
+        int i1= solution.removeDuplicates1(nums);
         System.out.println(i);
+        System.out.println(i1);
     }
 
     /**
@@ -33,5 +35,17 @@ public class LC_26_S_RemoveDuplicates {
         // 数组长度为索引 + 1
         return i + 1;
 
+    }
+
+    public int removeDuplicates1(int[] nums) {
+        int slow = 0, fast = 1;
+        while (fast < nums.length) {
+            if (nums[slow] != nums[fast]) {
+                slow++;
+                nums[slow] = nums[fast];
+            }
+            fast++;
+        }
+        return slow + 1;
     }
 }
