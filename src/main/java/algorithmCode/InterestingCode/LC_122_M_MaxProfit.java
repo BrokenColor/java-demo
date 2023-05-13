@@ -22,4 +22,23 @@ public class LC_122_M_MaxProfit {
         }
         return maxProfit;
     }
+
+    /**
+     * 递归处理
+     *
+     * @param prices
+     * @return
+     */
+    public int maxProfit1(int[] prices) {
+        int sell = 0, buy = Integer.MIN_VALUE;
+        for (int i = 0; i < prices.length; i++) {
+            int preSell = sell;
+            //卖出：本次不操作还是卖出
+            sell = Math.max(sell, buy + prices[i]);
+            //买入：本次不操作还是买入
+            buy = Math.max(buy, preSell - prices[i]);
+        }
+        //最后一天卖出最优解
+        return sell;
+    }
 }
