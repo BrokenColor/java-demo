@@ -15,6 +15,7 @@ public class LC_45_M_Jump {
         int[] nums = {2, 1};
         LC_45_M_Jump solution = new LC_45_M_Jump();
         System.out.println(solution.jump(nums));
+        System.out.println(solution.jump1(nums));
     }
 
     public int jump(int[] nums) {
@@ -36,5 +37,20 @@ public class LC_45_M_Jump {
 
         }
         return dp[length - 1];
+    }
+
+    public int jump1(int[] nums) {
+        int length = nums.length;
+        int maxPosition = 0;
+        int end = 0;
+        int step = 0;
+        for (int i = 0; i < length; i++) {
+            maxPosition = Math.max(maxPosition, i + nums[i]);
+            if (i == end) {
+                end = maxPosition;
+                step++;
+            }
+        }
+        return step;
     }
 }
