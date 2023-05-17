@@ -15,6 +15,7 @@ public class LC_45_M_Jump {
         int[] nums = {2, 1};
         LC_45_M_Jump solution = new LC_45_M_Jump();
         System.out.println(solution.jump(nums));
+        System.out.println(solution.jump1(nums));
     }
 
     public int jump(int[] nums) {
