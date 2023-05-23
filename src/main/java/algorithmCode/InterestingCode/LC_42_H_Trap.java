@@ -12,6 +12,8 @@ public class LC_42_H_Trap {
         int[] height = {0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1};
         LC_42_H_Trap solution = new LC_42_H_Trap();
         System.out.println(solution.trap(height));
+        System.out.println(solution.trap1(height));
+        System.out.println(solution.trap2(height));
     }
 
     public int trap(int[] height) {
@@ -62,6 +64,31 @@ public class LC_42_H_Trap {
             //如果比当前列高
             if (min > height[i]) {
                 sum = sum + (min - height[i]);
+            }
+        }
+        return sum;
+    }
+
+    public int trap2(int[] height) {
+        int length = height.length;
+        int sum = 0;
+        int maxLeft = 0, maxRight = 0;
+        int left = 1, right = length - 2;
+        for (int i = 1; i < length - 1; i++) {
+            if (height[left - 1] < height[right + 1]) {
+                maxLeft = Math.max(height[left - 1], maxLeft);
+                int min = maxLeft;
+                if (min > height[left]) {
+                    sum = sum + (min - height[left]);
+                }
+                left++;
+            } else {
+                maxRight = Math.max(height[right + 1], maxRight);
+                int min = maxRight;
+                if (min > height[right]) {
+                    sum = sum + (min - height[right]);
+                }
+                right--;
             }
         }
         return sum;
