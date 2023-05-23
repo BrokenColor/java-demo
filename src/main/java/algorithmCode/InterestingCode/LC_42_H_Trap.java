@@ -75,6 +75,7 @@ public class LC_42_H_Trap {
         int maxLeft = 0, maxRight = 0;
         int left = 1, right = length - 2;
         for (int i = 1; i < length - 1; i++) {
+            //从左到右更
             if (height[left - 1] < height[right + 1]) {
                 maxLeft = Math.max(height[left - 1], maxLeft);
                 int min = maxLeft;
@@ -82,7 +83,7 @@ public class LC_42_H_Trap {
                     sum = sum + (min - height[left]);
                 }
                 left++;
-            } else {
+            } else {//从右到左更
                 maxRight = Math.max(height[right + 1], maxRight);
                 int min = maxRight;
                 if (min > height[right]) {
