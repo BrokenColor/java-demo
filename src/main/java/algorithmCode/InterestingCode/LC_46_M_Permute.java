@@ -22,7 +22,8 @@ public class LC_46_M_Permute {
         int[] nums = {1, 2, 3};
         //【路径】记录
         LinkedList<Integer> track = new LinkedList<>();
-        backtrack(nums, track);
+        LC_46_M_Permute solution = new LC_46_M_Permute();
+        solution.backtrack(nums, track);
         System.out.println(res);
     }
 
@@ -34,7 +35,7 @@ public class LC_46_M_Permute {
      * @param nums
      * @param track
      */
-    public static void backtrack(int[] nums, LinkedList<Integer> track) {
+    public void backtrack(int[] nums, LinkedList<Integer> track) {
         //结束条件
         if (nums.length == track.size()) {
             //添加到结果集
