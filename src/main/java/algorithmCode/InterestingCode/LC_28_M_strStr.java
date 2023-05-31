@@ -22,6 +22,7 @@ public class LC_28_M_strStr {
                 }
                 p1++;
             } else {
+                //p1退到相同的地方
                 p1 = p1 - p2 + 1;
                 p2 = 0;
             }
