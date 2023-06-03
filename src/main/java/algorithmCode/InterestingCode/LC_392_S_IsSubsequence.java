@@ -12,6 +12,19 @@ public class LC_392_S_IsSubsequence {
     }
 
     public boolean isSubsequence(String s, String t) {
+        int tLen = t.length();
+        int sLen = s.length();
+        int tIndex = 0, sIndex = 0;
+        while (tIndex < tLen && sIndex < sLen) {
+            if (t.charAt(tIndex) == s.charAt(sIndex)) {
+                sIndex++;
+            }
+            tIndex++;
+        }
+        return sIndex == sLen;
+    }
+
+    public boolean isSubsequence1(String s, String t) {
         if ("".equals(s)) return true;
         int length = t.length();
         for (int i = 0; i < length; i++) {
