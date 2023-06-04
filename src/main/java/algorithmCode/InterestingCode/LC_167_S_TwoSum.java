@@ -29,6 +29,6 @@ public class LC_167_S_TwoSum {
                 right--;
             }
         }
-        return null;
+        return new int[]{-1, -1};
     }
 }
