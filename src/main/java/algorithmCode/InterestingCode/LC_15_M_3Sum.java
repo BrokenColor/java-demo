@@ -2,6 +2,7 @@ package algorithmCode.InterestingCode;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -12,13 +13,14 @@ import java.util.List;
  */
 public class LC_15_M_3Sum {
     public static void main(String[] args) {
-       int[] nums = new int[]{-1, 0, 1, 2, -1, -4};
-        List<List<Integer>> lists = threeSum(nums);
-        System.out.println(lists);
+        int[] nums = new int[]{-1, 0, 1, 2, -1, -4};
+        LC_15_M_3Sum solution = new LC_15_M_3Sum();
+        System.out.println(solution.threeSum(nums));
+        System.out.println(solution.threeSum1(nums));
     }
 
     //双指针
-    public static List<List<Integer>> threeSum(int[] nums) {
+    public List<List<Integer>> threeSum(int[] nums) {
         List<List<Integer>> result = new ArrayList<>();
         if (nums.length < 3) {
             return result;
@@ -33,7 +35,7 @@ public class LC_15_M_3Sum {
             while (left < right) {
                 int res = nums[i] + nums[left] + nums[right];
                 if (res == 0) {
-                    result.add(Arrays.asList(new Integer[]{nums[i], nums[left], nums[right]}));
+                    result.add(Arrays.asList(nums[i], nums[left], nums[right]));
 
                     // 首先无论如何先要进行加减操作
                     left++;
@@ -48,5 +50,34 @@ public class LC_15_M_3Sum {
             }
         }
         return result;
+    }
+
+    public List<List<Integer>> threeSum1(int[] nums) {
+        int length = nums.length;
+        List<List<Integer>> ans = new ArrayList<>();
+        Arrays.sort(nums);
+        for (int i = 0; i < length; i++) {
+            if (i > 0 && nums[i] == nums[i - 1]) {
+                continue;
+            }
+            int right = length - 1;
+            int target = -nums[i];
+            for (int j = i + 1; j < length; j++) {
+                if (j > i + 1 && nums[j] == nums[j - 1]) {
+                    continue;
+                }
+                while (j < right && nums[j] + nums[right] > target) {
+                    right--;
+                }
+                if (j == right) {
+                    break;
+                }
+                if (nums[j] + nums[right] == target) {
+                    ans.add(Arrays.asList(nums[i], nums[j], nums[right]));
+                }
+            }
+        }
+
+        return ans;
     }
 }
