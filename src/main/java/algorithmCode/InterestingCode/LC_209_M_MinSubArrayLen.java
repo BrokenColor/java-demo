@@ -22,9 +22,13 @@ public class LC_209_M_MinSubArrayLen {
         int reslut = Integer.MAX_VALUE, sum = 0;
         int left = 0, right = 0;
         while (right < length) {
+            //扩大窗口
             sum += nums[right];
+            //满足条件
             while (sum >= target) {
+                //更新结果
                 reslut = Math.min(reslut, right - left + 1);
+                //缩小窗口
                 sum -= nums[left];
                 left++;
             }
