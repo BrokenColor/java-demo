@@ -14,6 +14,7 @@ public class LC_242_S_IsAnagram {
     public static void main(String[] args) {
         LC_242_S_IsAnagram solution = new LC_242_S_IsAnagram();
         System.out.println(solution.isAnagram("anagram", "nagaram"));
+        System.out.println(solution.isAnagram1("anagram", "nagaram"));
     }
 
     /**
