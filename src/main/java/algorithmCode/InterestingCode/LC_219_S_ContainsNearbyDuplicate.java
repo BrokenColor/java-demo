@@ -1,5 +1,8 @@
 package algorithmCode.InterestingCode;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * 219. 存在重复元素 II
  *
@@ -35,5 +38,30 @@ public class LC_219_S_ContainsNearbyDuplicate {
             }
         }
         return res;
+    }
+
+    /**
+     * 使用哈希表处理
+     *
+     * @param nums
+     * @param k
+     * @return
+     */
+    public boolean containsNearbyDuplicate1(int[] nums, int k) {
+        int length = nums.length;
+        if (length <= 1) return false;
+        Map<Integer, Integer> map = new HashMap<>();
+        map.put(nums[0], 0);
+        for (int i = 1; i < nums.length; i++) {
+            int num = nums[i];
+            if (map.containsKey(num)) {
+                int index = map.get(num);
+                if (i - index <= k) {
+                    return true;
+                }
+            }
+            map.put(num, i);
+        }
+        return false;
     }
 }
