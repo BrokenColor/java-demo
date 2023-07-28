@@ -29,7 +29,7 @@ public class LC_228_S_SummaryRanges {
             StringBuilder stringBuilder = new StringBuilder(Integer.toString(nums[low]));
             if (low < high) {
                 stringBuilder.append("->");
-                stringBuilder.append(Integer.toString(nums[high]));
+                stringBuilder.append(nums[high]);
             }
             result.add(stringBuilder.toString());
         }
