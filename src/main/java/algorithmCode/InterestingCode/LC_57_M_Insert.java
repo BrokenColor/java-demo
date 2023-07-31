@@ -57,14 +57,17 @@ public class LC_57_M_Insert {
         for (int[] interval : intervals) {
             //右侧是否有重叠
             if (interval[0] > right) {
+                // 在插入区间的右侧且无交集
                 if (!place) {
                     anslist.add(new int[]{left, right});
                     place = true;
                 }
                 anslist.add(interval);
             } else if (interval[1] < left) {//左侧是否重叠
+                // 在插入区间的左侧且无交集
                 anslist.add(interval);
             } else {//有重叠则跟新左右节点
+                // 与插入区间有交集，计算它们的并集
                 left = Math.min(left, interval[0]);
                 right = Math.max(right, interval[1]);
             }
