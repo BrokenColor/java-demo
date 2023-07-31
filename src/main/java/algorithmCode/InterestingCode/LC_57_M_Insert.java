@@ -14,7 +14,8 @@ public class LC_57_M_Insert {
         LC_57_M_Insert solution = new LC_57_M_Insert();
         int[][] intervals = {{1,3},{6,9}};
         int [] newInterval = {2,5};
-        int[][] result = solution.insert(intervals, newInterval);
+//        int[][] result = solution.insert(intervals, newInterval);
+        int[][] result = solution.insert1(intervals, newInterval);
         System.out.println(Arrays.deepToString(result));
     }
 
@@ -46,5 +47,32 @@ public class LC_57_M_Insert {
         }
         //转化成数组返回
         return merge.toArray(new int[merge.size()][2]);
+    }
+
+    public int[][] insert1(int[][] intervals, int[] newInterval) {
+        List<int[]> anslist = new ArrayList<>();
+        int left = newInterval[0];
+        int right = newInterval[1];
+        boolean place = false;
+        for (int[] interval : intervals) {
+            //右侧是否有重叠
+            if (interval[0] > right) {
+                if (!place) {
+                    anslist.add(new int[]{left, right});
+                    place = true;
+                }
+                anslist.add(interval);
+            } else if (interval[1] < left) {//左侧是否重叠
+                anslist.add(interval);
+            } else {//有重叠则跟新左右节点
+                left = Math.min(left, interval[0]);
+                right = Math.max(right, interval[1]);
+            }
+        }
+        if (!place){
+            anslist.add(new int[]{left, right});
+        }
+
+        return anslist.toArray(new int[anslist.size()][]);
     }
 }
