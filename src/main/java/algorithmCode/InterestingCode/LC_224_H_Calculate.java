@@ -50,7 +50,7 @@ public class LC_224_H_Calculate {
                     long num = 0;
                     //遍历取出字符构建数字
                     while (i < n && Character.isDigit(s.charAt(i))) {
-                        num = num * 10 + charAt - '0';
+                        num = num * 10 + s.charAt(i) - '0';
                         i++;
                     }
                     ret += sign * num;
