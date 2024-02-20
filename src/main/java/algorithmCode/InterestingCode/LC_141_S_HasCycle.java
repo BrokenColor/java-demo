@@ -40,4 +40,16 @@ public class LC_141_S_HasCycle {
         }
         return true;
     }
+
+    public boolean hasCycle1(ListNode head) {
+        ListNode fast = head, low = head;
+        while (fast!=null && fast.next!=null){
+            fast = fast.next.next;
+            low = low.next;
+            if (fast == low){
+                return true;
+            }
+        }
+        return false;
+    }
 }
