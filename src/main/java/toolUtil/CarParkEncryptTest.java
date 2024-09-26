@@ -2,6 +2,12 @@ package toolUtil;
 
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.serializer.SerializerFeature;
+import toolUtil.carparkEncrypt.DecryptAndVerifyReqBean;
+import toolUtil.carparkEncrypt.DecryptAndVerifyResBean;
+import toolUtil.carparkEncrypt.EncryptAndSignReqBean;
+import toolUtil.carparkEncrypt.EncryptAndSignResBean;
+import toolUtil.carparkEncrypt.ParkingOrderRequestBean;
+import toolUtil.carparkEncrypt.SecurityUtils;
 
 import javax.crypto.KeyGenerator;
 import javax.crypto.SecretKey;
@@ -37,7 +43,7 @@ public class CarParkEncryptTest {
             Map<String, String> request = new HashMap<>();
             request.put("cipherJson",parkingRequest.getString("cipherJson"));
             request.put("sign",parkingRequest.getString("sign"));
-            System.out.println(decryptPEK(request, desKey, saltKey));
+//            System.out.println(decryptPEK(request, desKey, saltKey));
         }
         System.out.println(genDesKey());
 
