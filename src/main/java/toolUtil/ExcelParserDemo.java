@@ -28,13 +28,20 @@ public class ExcelParserDemo {
                 String stringCellValue = cell.getStringCellValue();
                 stringBuilder.append(stringCellValue + ",");
                 if (row.getRowNum() % 2000 == 0) {
-                    System.out.println(index++ + ":");
-                    System.out.println(stringBuilder.toString());
+//                    System.out.println(index++ + ":");
+                    String carIds = stringBuilder.toString();
+                    if (carIds.endsWith(",")) {
+                        carIds = carIds.substring(0, carIds.length()-1);
+                    }
+                    System.out.println(carIds);
                     stringBuilder = new StringBuilder();
                 }
             }
-            System.out.println(index + ":");
-            System.out.println(stringBuilder.toString());
+            String carIds = stringBuilder.toString();
+            if (carIds.endsWith(",")) {
+                carIds = carIds.substring(0, carIds.length()-1);
+            }
+            System.out.println(carIds);
         } catch (IOException e) {
             e.printStackTrace();
         }

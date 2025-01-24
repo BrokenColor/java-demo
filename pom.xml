@@ -154,6 +154,11 @@
             <artifactId>jts-core</artifactId>
             <version>1.18.2</version>
         </dependency>
+        <dependency>
+            <groupId>org.openjdk.jol</groupId>
+            <artifactId>jol-core</artifactId>
+            <version>0.16</version>
+        </dependency>
 
     </dependencies>
     <build>
